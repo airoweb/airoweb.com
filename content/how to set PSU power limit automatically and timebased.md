@@ -27,4 +27,4 @@ In some countries there is electricity grid program and the electricity cost is 
 
 6. Happy mining!
 
-> Get [Braiins OS+](https://braiins-os.com) to increase your mining devices efficiency!
+> Get [Braiins OS+](https://braiins-os.com?utm_source=airoweb) to increase your mining devices efficiency!
