@@ -1,6 +1,6 @@
 +++
-title = "How to change PSU power limit based on day/night automatically?"
-date = 2020-03-18
+title = "How to call BOSminer API in Python?"
+date = 2020-07-18
 
 [taxonomies] 
 categories = ["Braiins OS+"]

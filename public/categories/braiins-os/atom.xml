@@ -5,12 +5,12 @@
 	<link href="https://airoweb.com/categories/braiins-os/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://airoweb.com"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2020-03-18T00:00:00+00:00</updated>
+	<updated>2020-07-18T00:00:00+00:00</updated>
 	<id>https://airoweb.com/categories/braiins-os/atom.xml</id>
 	<entry xml:lang="en">
-		<title>How to change PSU power limit based on day&#x2F;night automatically?</title>
-		<published>2020-03-18T00:00:00+00:00</published>
-		<updated>2020-03-18T00:00:00+00:00</updated>
+		<title>How to call BOSminer API in Python?</title>
+		<published>2020-07-18T00:00:00+00:00</published>
+		<updated>2020-07-18T00:00:00+00:00</updated>
 		<link href="https://airoweb.com/how-to-call-bosminer-api-in-python/" type="text/html"/>
 		<id>https://airoweb.com/how-to-call-bosminer-api-in-python/</id>
 		<content type="html">&lt;pre data-lang=&quot;python&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-python &quot;&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;#!&#x2F;usr&#x2F;bin&#x2F;python3
