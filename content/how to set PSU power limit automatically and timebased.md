@@ -1,6 +1,6 @@
 +++
 title = "How to change PSU power limit based on day/night automatically?"
-date = 2020-03-18
+date = 2021-03-18
 
 [taxonomies] 
 categories = ["Mining", "Braiins OS+"]

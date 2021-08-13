@@ -1,6 +1,6 @@
 +++
 title = "How to call BOSminer API in Python?"
-date = 2020-07-18
+date = 2021-07-18
 
 [taxonomies] 
 categories = ["Braiins OS+"]
