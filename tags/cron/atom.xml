@@ -5,12 +5,12 @@
 	<link href="https://airoweb.com/tags/cron/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://airoweb.com"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2020-03-18T00:00:00+00:00</updated>
+	<updated>2021-03-18T00:00:00+00:00</updated>
 	<id>https://airoweb.com/tags/cron/atom.xml</id>
 	<entry xml:lang="en">
 		<title>How to change PSU power limit based on day&#x2F;night automatically?</title>
-		<published>2020-03-18T00:00:00+00:00</published>
-		<updated>2020-03-18T00:00:00+00:00</updated>
+		<published>2021-03-18T00:00:00+00:00</published>
+		<updated>2021-03-18T00:00:00+00:00</updated>
 		<link href="https://airoweb.com/how-to-set-psu-power-limit-automatically-and-timebased/" type="text/html"/>
 		<id>https://airoweb.com/how-to-set-psu-power-limit-automatically-and-timebased/</id>
 		<content type="html">&lt;p&gt;In some countries there is electricity grid program and the electricity cost is different during a day, so if you want to power up your mining devices with low and hight PSU power limit in day&#x2F;night you can follow the steps below.&lt;&#x2F;p&gt;
