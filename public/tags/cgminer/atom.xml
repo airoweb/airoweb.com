@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+	<title> - cgminer</title>
+	<link href="https://airoweb.com/tags/cgminer/atom.xml" rel="self" type="application/atom+xml"/>
+  <link href="https://airoweb.com"/>
+	<generator uri="https://www.getzola.org/">Zola</generator>
+	<updated>2019-10-12T00:00:00+00:00</updated>
+	<id>https://airoweb.com/tags/cgminer/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Auto reload cgminer if it is lower than 10Th&#x2F;s</title>
+		<published>2019-10-12T00:00:00+00:00</published>
+		<updated>2019-10-12T00:00:00+00:00</updated>
+		<link href="https://airoweb.com/post-2/" type="text/html"/>
+		<id>https://airoweb.com/post-2/</id>
+		<content type="html">&lt;p&gt;Use this bash script to auto reload cgminer when hash rate is lower than 10TH&#x2F;s:&lt;&#x2F;p&gt;
+&lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;#!&#x2F;usr&#x2F;bin&#x2F;env bash
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;rm&lt;&#x2F;span&gt;&lt;span&gt; output.txt |
+&lt;&#x2F;span&gt;&lt;span&gt;`&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;echo &lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;{&amp;quot;command&amp;quot;:&amp;quot;stats&amp;quot;}&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39; | &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;nc&lt;&#x2F;span&gt;&lt;span&gt; 127.0.0.1 4028 &amp;gt;&amp;gt; output.txt` |
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;hash_rate&lt;&#x2F;span&gt;&lt;span&gt;=$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;awk -v&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt; tag=&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;GHS av&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39; &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;match($0,&amp;quot;\&amp;quot;&amp;quot;tag&amp;quot;\&amp;quot;: *(\&amp;quot;[^\&amp;quot;]*|[0-9]+)&amp;quot;) { val=substr($0,RSTART,RLENGTH); sub(&#x2F;^&amp;quot;[^&amp;quot;]+&amp;quot;: *&amp;quot;?&#x2F;,&amp;quot;&amp;quot;,val); print val }&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt; output.txt) &lt;&#x2F;span&gt;&lt;span&gt;|
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;epoch&lt;&#x2F;span&gt;&lt;span&gt;=$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;date&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt; +&lt;&#x2F;span&gt;&lt;span&gt;%&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;s&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;) &lt;&#x2F;span&gt;&lt;span&gt;|
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;[&lt;&#x2F;span&gt;&lt;span&gt; 10000 &amp;gt; hash_rate &lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;]&lt;&#x2F;span&gt;&lt;span&gt;;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;then 
+&lt;&#x2F;span&gt;&lt;span&gt;	&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;&#x2F;etc&#x2F;init.d&#x2F;cgminer&lt;&#x2F;span&gt;&lt;span&gt; reload
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;fi
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+</content>
+	</entry>
+</feed>
