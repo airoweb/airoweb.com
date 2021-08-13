@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://airoweb.com/sitemap.xml

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+	<title> - Braiins OS+</title>
+	<link href="https://airoweb.com/categories/braiins-os/atom.xml" rel="self" type="application/atom+xml"/>
+  <link href="https://airoweb.com"/>
+	<generator uri="https://www.getzola.org/">Zola</generator>
+	<updated>2020-03-18T00:00:00+00:00</updated>
+	<id>https://airoweb.com/categories/braiins-os/atom.xml</id>
+	<entry xml:lang="en">
+		<title>How to change PSU power limit based on day&#x2F;night automatically?</title>
+		<published>2020-03-18T00:00:00+00:00</published>
+		<updated>2020-03-18T00:00:00+00:00</updated>
+		<link href="https://airoweb.com/post-3/" type="text/html"/>
+		<id>https://airoweb.com/post-3/</id>
+		<content type="html">&lt;p&gt;You should follow these steps:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Login to the Braiins OS+ web interface and navigate to System &amp;gt; Schedule Tasks&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Copy and paste the following command to the text area and save it.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt; 9 * * * &#x2F;etc&#x2F;init.d&#x2F;bosminer stop &amp;amp;&amp;amp; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;sed -i &lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;s&#x2F;psu_power_limit = 1250&#x2F;psu_power_limit = 900&#x2F;&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39; &#x2F;etc&#x2F;bosminer.toml &amp;amp;&amp;amp; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;cp&lt;&#x2F;span&gt;&lt;span&gt; &#x2F;etc&#x2F;tune900.json &#x2F;etc&#x2F;bosminer-autotune.json &amp;amp;&amp;amp; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;&#x2F;etc&#x2F;init.d&#x2F;bosminer&lt;&#x2F;span&gt;&lt;span&gt; start
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt; 21 * * * &#x2F;etc&#x2F;init.d&#x2F;bosminer stop &amp;amp;&amp;amp; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;sed -i &lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;s&#x2F;psu_power_limit = 900&#x2F;psu_power_limit = 1250&#x2F;&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39; &#x2F;etc&#x2F;bosminer.toml &amp;amp;&amp;amp; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;cp&lt;&#x2F;span&gt;&lt;span&gt; &#x2F;etc&#x2F;tune1250.json &#x2F;etc&#x2F;bosminer-autotune.json &amp;amp;&amp;amp; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;&#x2F;etc&#x2F;init.d&#x2F;bosminer&lt;&#x2F;span&gt;&lt;span&gt; start
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;ol start=&quot;3&quot;&gt;
+&lt;li&gt;
+&lt;p&gt;If the scheduled task field was empty before this, SSH again to the device run the command below:
+&#x2F;etc&#x2F;init.d&#x2F;cron restart&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Set device time zone to your proper time zone &lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Happy mining!&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+</content>
+	</entry>
+</feed>
