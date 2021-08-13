@@ -20,6 +20,10 @@
         <loc>https://airoweb.com/categories/mining/</loc>
     </url>
     <url>
+        <loc>https://airoweb.com/collect-support-logs-through-the-ssh-in-braiins-os/</loc>
+        <lastmod>2021-08-14</lastmod>
+    </url>
+    <url>
         <loc>https://airoweb.com/how-to-call-bosminer-api-in-python/</loc>
         <lastmod>2020-07-18</lastmod>
     </url>
@@ -32,7 +36,7 @@
     </url>
     <url>
         <loc>https://airoweb.com/relunch-personal-blog/</loc>
-        <lastmod>2021-08-11</lastmod>
+        <lastmod>2021-02-11</lastmod>
     </url>
     <url>
         <loc>https://airoweb.com/tags/</loc>
@@ -50,6 +54,12 @@
         <loc>https://airoweb.com/tags/cron/</loc>
     </url>
     <url>
+        <loc>https://airoweb.com/tags/logs/</loc>
+    </url>
+    <url>
         <loc>https://airoweb.com/tags/python/</loc>
+    </url>
+    <url>
+        <loc>https://airoweb.com/tags/ssh/</loc>
     </url>
 </urlset>

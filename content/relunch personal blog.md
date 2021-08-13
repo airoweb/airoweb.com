@@ -1,6 +1,6 @@
 +++
 title = "Relunch personal blog with Rust"
-date = 2021-08-11
+date = 2021-02-11
 
 [taxonomies] 
 categories = ["General"]
