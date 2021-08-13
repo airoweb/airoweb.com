@@ -34,4 +34,5 @@ after_dark_menu = [
     {url = "$BASE_URL/tags", name = "Tags"},
     {url = "https://braiins-os.com", name = "Braiins OS+"},
 ]
-# after_dark_title = "Behzad's Techlogs"
+
+after_dark_title = "Behzad's Techlogs"
