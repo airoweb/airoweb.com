@@ -20,6 +20,10 @@
         <loc>https://airoweb.com/categories/mining/</loc>
     </url>
     <url>
+        <loc>https://airoweb.com/how-to-call-bosminer-api-in-python/</loc>
+        <lastmod>2020-03-18</lastmod>
+    </url>
+    <url>
         <loc>https://airoweb.com/how-to-set-psu-power-limit-automatically-and-timebased/</loc>
         <lastmod>2020-03-18</lastmod>
     </url>
@@ -34,6 +38,9 @@
         <loc>https://airoweb.com/tags/</loc>
     </url>
     <url>
+        <loc>https://airoweb.com/tags/api/</loc>
+    </url>
+    <url>
         <loc>https://airoweb.com/tags/bosminer/</loc>
     </url>
     <url>
@@ -41,5 +48,8 @@
     </url>
     <url>
         <loc>https://airoweb.com/tags/cron/</loc>
+    </url>
+    <url>
+        <loc>https://airoweb.com/tags/python/</loc>
     </url>
 </urlset>

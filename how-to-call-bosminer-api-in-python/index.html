@@ -59,7 +59,7 @@
 
 <article itemscope itemtype="http://schema.org/BlogPosting">
     <header>
-        <h1 itemprop="headline">Relunch personal blog with Rust</h1>
+        <h1 itemprop="headline">How to change PSU power limit based on day&#x2F;night automatically?</h1>
         <span class="muted">
     <svg style="margin-bottom:-3px" class="i-clock" viewBox="0 0 32 32"
          width="16" height="16" fill="none" stroke="currentcolor"
@@ -74,14 +74,22 @@
         <path d="M30 7 L25 2 5 22 3 29 10 27 Z M21 6 L26 11 Z M5 22 L10 27 Z"/>
     </svg>
 
-    Published: 2021-08-11
+    Published: 2020-03-18
 </span>
     </header>
     <div itemprop="articleBody">
-      <p>I decided to relunch my personal techlogs with a Rust based static site generator called &quot;Zola&quot;.</p>
-<span id="continue-reading"></span>
-<p>at the first glance it was easy, however, it was tricky. So I hope sharing my techlogs can be helpful for someone, somewhere, sometimes.</p>
-<p>Cheers!</p>
+      <pre data-lang="python" style="background-color:#2b303b;color:#c0c5ce;" class="language-python "><code class="language-python" data-lang="python"><span style="color:#65737e;">#!/usr/bin/python3
+</span><span style="color:#b48ead;">import </span><span>socket
+</span><span>s = socket.</span><span style="color:#bf616a;">socket</span><span>(socket.</span><span style="color:#bf616a;">AF_INET</span><span>, socket.</span><span style="color:#bf616a;">SOCK_STREAM</span><span>)
+</span><span>s.</span><span style="color:#bf616a;">connect</span><span>((&quot;</span><span style="color:#a3be8c;">10.10.1.2</span><span>&quot;, </span><span style="color:#d08770;">4028</span><span>))
+</span><span>s.</span><span style="color:#bf616a;">send</span><span>(</span><span style="color:#b48ead;">b</span><span>&#39;</span><span style="color:#a3be8c;">{&quot;command&quot;:&quot;pools&quot;}</span><span style="color:#96b5b4;">\n</span><span>&#39;)
+</span><span>data = s.</span><span style="color:#bf616a;">recv</span><span>(</span><span style="color:#d08770;">2048</span><span>)
+</span><span>s.</span><span style="color:#bf616a;">close</span><span>()
+</span><span style="color:#96b5b4;">print</span><span>(data.</span><span style="color:#bf616a;">decode</span><span>(&quot;</span><span style="color:#a3be8c;">ascii</span><span>&quot;))
+</span></code></pre>
+<blockquote>
+<p>Get <a href="https://braiins-os.com?utm_source=airoweb">Braiins OS+</a> to increase your mining devices efficiency!</p>
+</blockquote>
 
     </div>
 
@@ -94,8 +102,34 @@
                 
                 
                     
-                    in <a href="https://airoweb.com/categories/general/">General</a>
+                    in <a href="https://airoweb.com/categories/braiins-os/">Braiins OS+</a>
                 
+                
+                    and tagged
+                    
+                        <a href="https://airoweb.com/tags/bosminer/">bosminer</a>
+                        
+                            
+                                
+                                    ,
+                                
+                            
+                        
+                    
+                        <a href="https://airoweb.com/tags/api/">api</a>
+                        
+                            
+                                
+                                    and
+                                
+                            
+                        
+                    
+                        <a href="https://airoweb.com/tags/python/">python</a>
+                        
+                            
+                        
+                    
                 
             </p>
             
