@@ -1,6 +1,11 @@
 # The URL the site will be built for
 base_url = "https://airoweb.com"
 
+title = "Behzad's Techlogs | Code, Minig, Server"
+description = "Here is my personal techlogs about code, mining, server"
+default_language = "en"
+generate_feed = false
+
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
 
@@ -29,4 +34,4 @@ after_dark_menu = [
     {url = "$BASE_URL/tags", name = "Tags"},
     {url = "https://braiins-os.com", name = "Braiins OS+"},
 ]
-after_dark_title = "Behzad's Techlogs"
+# after_dark_title = "Behzad's Techlogs"
