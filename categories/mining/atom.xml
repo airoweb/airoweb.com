@@ -11,8 +11,8 @@
 		<title>How to change PSU power limit based on day&#x2F;night automatically?</title>
 		<published>2020-03-18T00:00:00+00:00</published>
 		<updated>2020-03-18T00:00:00+00:00</updated>
-		<link href="https://airoweb.com/post-3/" type="text/html"/>
-		<id>https://airoweb.com/post-3/</id>
+		<link href="https://airoweb.com/how-to-set-psu-power-limit-automatically-and-timebased/" type="text/html"/>
+		<id>https://airoweb.com/how-to-set-psu-power-limit-automatically-and-timebased/</id>
 		<content type="html">&lt;p&gt;In some countries there is electricity grid program and the electricity cost is different during a day, so if you want to power up your mining devices with low and hight PSU power limit in day&#x2F;night you can follow the steps below.&lt;&#x2F;p&gt;
 &lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;
 &lt;ol&gt;
@@ -48,8 +48,8 @@
 		<title>Auto reload cgminer if it is lower than 10Th&#x2F;s</title>
 		<published>2019-10-12T00:00:00+00:00</published>
 		<updated>2019-10-12T00:00:00+00:00</updated>
-		<link href="https://airoweb.com/post-2/" type="text/html"/>
-		<id>https://airoweb.com/post-2/</id>
+		<link href="https://airoweb.com/auto-reload-cgminer-when-it-is-lower-than-exact-hashrate/" type="text/html"/>
+		<id>https://airoweb.com/auto-reload-cgminer-when-it-is-lower-than-exact-hashrate/</id>
 		<content type="html">&lt;p&gt;Use this bash script to auto reload cgminer when hash rate is lower than 10TH&#x2F;s:&lt;&#x2F;p&gt;
 &lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;#!&#x2F;usr&#x2F;bin&#x2F;env bash
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;rm&lt;&#x2F;span&gt;&lt;span&gt; output.txt |
