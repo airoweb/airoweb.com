@@ -14,7 +14,7 @@
 		<link href="https://airoweb.com/collect-support-logs-through-the-ssh-in-braiins-os/" type="text/html"/>
 		<id>https://airoweb.com/collect-support-logs-through-the-ssh-in-braiins-os/</id>
 		<content type="html">&lt;p&gt;In some case the Quick Action &amp;gt; Get help doesn&#x27;t work, so you can collect logs by the command below.&lt;&#x2F;p&gt;
-&lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;pre data-lang=&quot;ssh&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-ssh &quot;&gt;&lt;code class=&quot;language-ssh&quot; data-lang=&quot;ssh&quot;&gt;&lt;span&gt;ssh root@10.11.1.2 &amp;quot;&#x2F;usr&#x2F;sbin&#x2F;support archive&amp;quot; &amp;amp;&amp;amp; scp root@10.11.1.2:&#x2F;tmp&#x2F;support* .&#x2F;
+&lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;ssh&lt;&#x2F;span&gt;&lt;span&gt; root@10.11.1.2 &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;&#x2F;usr&#x2F;sbin&#x2F;support archive&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot; &amp;amp;&amp;amp; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;scp&lt;&#x2F;span&gt;&lt;span&gt; root@10.11.1.2:&#x2F;tmp&#x2F;support* .&#x2F;
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;Use &lt;code&gt;scp&lt;&#x2F;code&gt; command will trannsfer data to your system.&lt;&#x2F;p&gt;
 &lt;blockquote&gt;

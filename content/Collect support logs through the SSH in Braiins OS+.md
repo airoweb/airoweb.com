@@ -11,7 +11,7 @@ In some case the Quick Action > Get help doesn't work, so you can collect logs b
 
 <!-- more -->
 
-```ssh
+```bash
 ssh root@10.11.1.2 "/usr/sbin/support archive" && scp root@10.11.1.2:/tmp/support* ./
 ```
 
