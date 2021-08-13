@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
-	<title> - cron</title>
+	<title>Behzad&#x27;s Techlogs | Code, Minig, Server - cron</title>
+	<subtitle>Here is my personal techlogs about code, mining, server</subtitle>
 	<link href="https://airoweb.com/tags/cron/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://airoweb.com"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
