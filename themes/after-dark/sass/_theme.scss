@@ -90,6 +90,17 @@ article [itemprop="summary"] p {
   margin: 0;
 }
 
+.readmore {
+  float: right;
+}
+.readmore::before {
+  content: "[ ";
+}
+.readmore::after {
+  content: " ]";
+}
+
+
 @media screen and (min-width: 768px) {
   html {
     font-size: 1em;
