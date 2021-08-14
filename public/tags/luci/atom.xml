@@ -8,7 +8,7 @@
 	<updated>2021-06-23T00:00:00+00:00</updated>
 	<id>https://airoweb.com/tags/luci/atom.xml</id>
 	<entry xml:lang="en">
-		<title>Switch DHCP IP to Static IP in batch mode with BOS+ Toolbox and luci command</title>
+		<title>Switch DHCP to Static IP in batch with BOS+ Toolbox and luci command</title>
 		<published>2021-06-23T00:00:00+00:00</published>
 		<updated>2021-06-23T00:00:00+00:00</updated>
 		<link href="https://airoweb.com/switch-dhcp-ip-to-static-ip-in-batch-mode-with-bos-toolbox-and-luci-command/" type="text/html"/>

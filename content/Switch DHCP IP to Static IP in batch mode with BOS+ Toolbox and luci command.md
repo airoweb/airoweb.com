@@ -1,5 +1,5 @@
 +++
-title = "Switch DHCP IP to Static IP in batch mode with BOS+ Toolbox and luci command"
+title = "Switch DHCP to Static IP in batch with BOS+ Toolbox and luci command"
 date = 2021-06-23
 
 [taxonomies] 
@@ -9,6 +9,7 @@ tags = ["luci", "BOS+ Toolbox"]
 
 In some case we need to chamge DHCP IP to Static IP in our network, the idea is we get the currenct miners IP and set it to the device as a static IP in Braiins OS+.
 <!-- more -->
+
 First you should download the BOS+ Toolbox [[Windows Version](https://feeds.braiins-os.com/toolbox/latest/bos-toolbox.zip)] | [[Linux Version](https://feeds.braiins-os.com/toolbox/latest/bos-toolbox)]
 
 Now you can run the command below:
