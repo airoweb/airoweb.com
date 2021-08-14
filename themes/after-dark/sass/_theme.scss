@@ -100,6 +100,11 @@ article [itemprop="summary"] p {
   content: " ]";
 }
 
+article {
+  background: #191919;
+  padding: 25px;
+  margin: 20px 0px;
+}
 
 @media screen and (min-width: 768px) {
   html {
