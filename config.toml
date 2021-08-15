@@ -4,7 +4,7 @@ base_url = "https://airoweb.com"
 title = "Behzad's Techlogs | Code, Minig, Server"
 description = "Here is my personal techlogs about code, mining, server"
 default_language = "en"
-generate_feed = false
+generate_feed = true
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
