@@ -8,7 +8,7 @@ categories = ["Braiins OS+"]
 tags = ["BOS+ Toolbox"]
 +++
 
-With the installed Braiins OS+, all devices get a uniq identifier ID called Hardware ID, in some case you need to find out the Hardware IP and the related IP. 
+With the installed Braiins OS+, all devices get a uniq identifier ID called Hardware ID, in some case you need to find out the Hardware ID and the related IP. 
 <!-- more -->
 
 You can collect Hardware ID and IP in a logs.txt file through the command below in the Toolbox:
