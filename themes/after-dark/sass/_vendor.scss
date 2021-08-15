@@ -47,7 +47,7 @@ a {
 }
 
 a:hover {
-  background-color: #1e88e5;
+  background-color: #2196f3;
   color: #fff
 }
 
@@ -459,8 +459,8 @@ table tbody td:first-child {
 }
 
 .form-group.form-warning label {
-  color: #ff9800 !important;
-  border-color: #ff9800 !important
+  color: #4fc3f7 !important;
+  border-color: #4fc3f7 !important
 }
 
 .form-group.form-error label {
@@ -621,8 +621,8 @@ select.form-control {
 
 .btn-warning {
   color: #fff;
-  background-color: #ff9800;
-  border: 1px solid #ff9800
+  background-color: #4fc3f7;
+  border: 1px solid #4fc3f7
 }
 
 .btn-warning:focus:not(.btn-ghost), .btn-warning:hover {
@@ -631,8 +631,8 @@ select.form-control {
 }
 
 .btn-warning.btn-ghost {
-  border-color: #ff9800;
-  color: #ff9800
+  border-color: #4fc3f7;
+  color: #4fc3f7
 }
 
 .btn-warning.btn-ghost:focus, .btn-warning.btn-ghost:hover {
@@ -731,8 +731,8 @@ select.form-control {
 }
 
 .alert-warning {
-  color: #ff9800;
-  border-color: #ff9800
+  color: #4fc3f7;
+  border-color: #4fc3f7
 }
 
 .media:not(:last-child) {
