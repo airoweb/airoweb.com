@@ -113,6 +113,10 @@ article [itemprop="summary"] p {
   color: #fff;
 }
 
+footer a::after {
+  display: none;
+}
+
 article {
   background: #191919;
   padding: 25px;
