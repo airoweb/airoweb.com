@@ -32,7 +32,7 @@ after_dark_menu = [
     {url = "$BASE_URL", name = "Home"},
     {url = "$BASE_URL/categories", name = "Categories"},
     {url = "$BASE_URL/tags", name = "Tags"},
-    {url = "https://braiins-os.com?utm_source=airoweb", name = "Braiins OS+"},
+    {url = "https://braiins-os.com?utm_source=airoweb", name = "https://assets.website-files.com/5e5ee6f9b325a6509259421f/5e95d34ccb1390aeaa910458_bos%2B.svg"},
 ]
 
 after_dark_title = "Behzad's Techlogs"
