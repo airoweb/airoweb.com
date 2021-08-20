@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Behzad&#x27;s Techlogs | Code, Minig, Server</title>
+
+  
+  <link rel="alternate"
+    type="application/atom+xml"
+    title="RSS" href="https://airoweb.com/atom.xml">
+  
+
+  
+  <link rel="stylesheet" href="https://airoweb.com/site.css">
+  
+
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-5384911-16"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-5384911-16');
+  </script>
+
+  
+</head>
+
+<body class="hack dark main container">
+  
+    
+        
+  
+  <header>
+    <nav itemscope itemtype="http://schema.org/SiteNavigationElement">
+      
+      <a itemprop="url"
+        class=""
+        href="https:&#x2F;&#x2F;airoweb.com">
+        <span itemprop="name">Home
+        </span></a>
+      
+      <a itemprop="url"
+        class=""
+        href="https:&#x2F;&#x2F;airoweb.com&#x2F;categories">
+        <span itemprop="name">Categories
+        </span></a>
+      
+      <a itemprop="url"
+        class=""
+        href="https:&#x2F;&#x2F;airoweb.com&#x2F;tags">
+        <span itemprop="name">Tags
+        </span></a>
+      
+      <a itemprop="url"
+        class=""
+        href="https:&#x2F;&#x2F;braiins-os.com?utm_source=airoweb">
+        <span itemprop="name">Braiins OS+
+        </span></a>
+      
+    </nav>
+  </header>
+  
+  
+    
+
+<article itemscope itemtype="http://schema.org/BlogPosting">
+    <header>
+        <h1 itemprop="headline">Check pool status and restart BOSminer with Toolbox</h1>
+        <span class="muted">
+    <svg style="margin-bottom:-3px" class="i-clock" viewBox="0 0 32 32"
+         width="16" height="16" fill="none" stroke="currentcolor"
+         stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+        <circle cx="16" cy="16" r="14"/>
+        <path d="M16 8 L16 16 20 20"/>
+    </svg>
+    <span>1 minute read</span>
+    <svg style="margin-bottom: -3px" class="i-edit" viewBox="0 0 32 32"
+         width="16" height="16" fill="none" stroke="currentcolor"
+         stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+        <path d="M30 7 L25 2 5 22 3 29 10 27 Z M21 6 L26 11 Z M5 22 L10 27 Z"/>
+    </svg>
+
+    Published: 2021-08-20
+</span>
+    </header>
+    <div itemprop="articleBody">
+      <span id="continue-reading"></span><pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#65737e;">#!/bin/bash
+</span><span>
+</span><span style="color:#bf616a;">DIR</span><span>=$</span><span style="color:#a3be8c;">( </span><span style="color:#96b5b4;">cd </span><span>&quot;$</span><span style="color:#a3be8c;">( </span><span style="color:#bf616a;">dirname </span><span>&quot;$</span><span style="color:#a3be8c;">{</span><span style="color:#bf616a;">BASH_SOURCE[</span><span style="color:#d08770;">0</span><span style="color:#bf616a;">]</span><span style="color:#a3be8c;">}</span><span>&quot; </span><span style="color:#a3be8c;">)</span><span>&quot; &amp;&amp; </span><span style="color:#96b5b4;">pwd </span><span style="color:#a3be8c;">)
+</span><span style="color:#bf616a;">PASSWORD</span><span>=</span><span style="color:#a3be8c;">xxxxxx
+</span><span>
+</span><span style="color:#b48ead;">if </span><span style="color:#96b5b4;">[[ </span><span>$</span><span style="color:#bf616a;">1 </span><span>== &quot;</span><span style="color:#a3be8c;">check</span><span>&quot; </span><span style="color:#96b5b4;">]] </span><span>|| </span><span style="color:#96b5b4;">[[ </span><span>$</span><span style="color:#bf616a;">1 </span><span>== &quot;</span><span style="color:#a3be8c;">check_reload</span><span>&quot; </span><span style="color:#96b5b4;">]]
+</span><span style="color:#b48ead;">then
+</span><span>  </span><span style="color:#b48ead;">for</span><span> i </span><span style="color:#b48ead;">in </span><span>{20..101}
+</span><span>  </span><span style="color:#b48ead;">do
+</span><span>    </span><span style="color:#bf616a;">ip</span><span>=&quot;</span><span style="color:#a3be8c;">192.168.1.</span><span>$</span><span style="color:#bf616a;">i</span><span>&quot;
+</span><span>    </span><span style="color:#bf616a;">fping -c1 -t100 </span><span>$</span><span style="color:#bf616a;">ip </span><span style="color:#d08770;">2</span><span>&gt;/dev/null </span><span style="color:#d08770;">1</span><span>&gt;/dev/null
+</span><span>    </span><span style="color:#b48ead;">if </span><span style="color:#96b5b4;">[ </span><span>&quot;$</span><span style="color:#bf616a;">?</span><span>&quot; = 0 </span><span style="color:#96b5b4;">]
+</span><span>    </span><span style="color:#b48ead;">then
+</span><span>      </span><span style="color:#b48ead;">if </span><span>! </span><span style="color:#96b5b4;">echo </span><span>&#39;</span><span style="color:#a3be8c;">{&quot;command&quot;:&quot;version&quot;}</span><span>&#39; | </span><span style="color:#bf616a;">nc </span><span>$</span><span style="color:#bf616a;">ip</span><span> 4028 |</span><span style="color:#bf616a;">jq</span><span> .&quot;</span><span style="color:#a3be8c;">VERSION</span><span>&quot;</span><span style="color:#b48ead;">[]</span><span>.&quot;</span><span style="color:#a3be8c;">BOSminer</span><span>&quot;  | </span><span style="color:#bf616a;">grep -q</span><span> bosminer
+</span><span>      </span><span style="color:#b48ead;">then
+</span><span>        </span><span style="color:#96b5b4;">echo </span><span>&quot;$</span><span style="color:#bf616a;">ip</span><span style="color:#a3be8c;"> no bosminer found</span><span>&quot;
+</span><span>      </span><span style="color:#b48ead;">else
+</span><span>        </span><span style="color:#bf616a;">pool_status</span><span>=$</span><span style="color:#a3be8c;">(</span><span style="color:#96b5b4;">echo </span><span>&#39;</span><span style="color:#a3be8c;">{&quot;command&quot;:&quot;pools&quot;}</span><span>&#39; | </span><span style="color:#bf616a;">nc </span><span>$</span><span style="color:#bf616a;">ip</span><span style="color:#a3be8c;"> 4028 </span><span>| </span><span style="color:#bf616a;">jq</span><span style="color:#a3be8c;"> .</span><span>&quot;</span><span style="color:#a3be8c;">POOLS</span><span>&quot;</span><span style="color:#b48ead;">[]</span><span style="color:#a3be8c;">.</span><span>&quot;</span><span style="color:#a3be8c;">Status</span><span>&quot;</span><span style="color:#a3be8c;">)
+</span><span>        </span><span style="color:#b48ead;">if </span><span style="color:#96b5b4;">[[ </span><span>$</span><span style="color:#bf616a;">pool_status </span><span>== &#39;</span><span style="color:#a3be8c;">Dead</span><span>&#39; </span><span style="color:#96b5b4;">]]
+</span><span>        </span><span style="color:#b48ead;">then
+</span><span>          </span><span style="color:#96b5b4;">echo </span><span>&quot;$</span><span style="color:#bf616a;">ip</span><span style="color:#a3be8c;"> : pool is </span><span>$</span><span style="color:#bf616a;">pool_status</span><span style="color:#a3be8c;">, Restart miner</span><span>&quot;
+</span><span>          </span><span style="color:#b48ead;">if </span><span style="color:#96b5b4;">[[ </span><span>$</span><span style="color:#bf616a;">1 </span><span>== &quot;</span><span style="color:#a3be8c;">check_reload</span><span>&quot; </span><span style="color:#96b5b4;">]]
+</span><span>          </span><span style="color:#b48ead;">then
+</span><span>            &quot;$</span><span style="color:#bf616a;">DIR</span><span>&quot;</span><span style="color:#bf616a;">/bos-toolbox</span><span> command $</span><span style="color:#bf616a;">ip -p </span><span>$</span><span style="color:#bf616a;">PASSWORD </span><span>&quot;</span><span style="color:#a3be8c;">/etc/bosminer.toml &amp;&amp; /etc/init.d/bosminer restart</span><span>&quot;
+</span><span>          </span><span style="color:#b48ead;">fi
+</span><span>        </span><span style="color:#b48ead;">else
+</span><span>          </span><span style="color:#96b5b4;">echo </span><span>&quot;$</span><span style="color:#bf616a;">ip</span><span style="color:#a3be8c;"> : pool status is </span><span>$</span><span style="color:#bf616a;">pool_status</span><span>&quot;
+</span><span>        </span><span style="color:#b48ead;">fi
+</span><span>      </span><span style="color:#b48ead;">fi
+</span><span>    </span><span style="color:#b48ead;">else
+</span><span>      </span><span style="color:#96b5b4;">echo </span><span>&quot;$</span><span style="color:#bf616a;">ip</span><span style="color:#a3be8c;"> OFFLINE</span><span>&quot;
+</span><span>    </span><span style="color:#b48ead;">fi
+</span><span>  </span><span style="color:#b48ead;">done
+</span><span style="color:#b48ead;">else
+</span><span>  </span><span style="color:#96b5b4;">echo </span><span>&quot;</span><span style="color:#a3be8c;">Ivalid Input, Use: check or check_reload</span><span>&quot;
+</span><span style="color:#b48ead;">fi
+</span></code></pre>
+
+    </div>
+
+    
+        <footer>
+            <hr>
+            <p>
+                
+                    Published by Behzad
+                
+                
+                    
+                    in <a href="https://airoweb.com/categories/braiins-os/">Braiins OS+</a>
+                
+                
+                    and tagged
+                    
+                        <a href="https://airoweb.com/tags/bos-toolbox/">BOS+ Toolbox</a>
+                        
+                            
+                                
+                                    and
+                                
+                            
+                        
+                    
+                        <a href="https://airoweb.com/tags/automation/">Automation</a>
+                        
+                            
+                        
+                    
+                
+            </p>
+            
+            
+        </footer>
+    
+</article>
+
+
+</body>
+
+</html>
