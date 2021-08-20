@@ -85,7 +85,7 @@
         <circle cx="16" cy="16" r="14"/>
         <path d="M16 8 L16 16 20 20"/>
     </svg>
-    <span>1 minute read</span>
+    <span>2 minute read</span>
     <svg style="margin-bottom: -3px" class="i-edit" viewBox="0 0 32 32"
          width="16" height="16" fill="none" stroke="currentcolor"
          stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
@@ -96,14 +96,21 @@
 </span>
     </header>
     <div itemprop="articleBody">
-      <span id="continue-reading"></span><pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#65737e;">#!/bin/bash
+      <p>The pool URLs in the Braiins OS+ and mostly all firmwares are failover for each other and if the first pool deads, the second one will work.</p>
+<span id="continue-reading"></span>
+<p>In some cases the farm has one URL and you need to check the machines for their Status and reload them.</p>
+<p>Run the command to download the latest BOS+ Toolbox:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>cd / &amp;&amp; wget http://feeds.braiins-os.com/toolbox/latest/bos-toolbox &amp;&amp; chmod+x ./bos-toolbox
+</span></code></pre>
+<p>Save the code below in a file &quot;checkpool.sh&quot; and save it in the beside of Toolbox.</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#65737e;">#!/bin/bash
 </span><span>
 </span><span style="color:#bf616a;">DIR</span><span>=$</span><span style="color:#a3be8c;">( </span><span style="color:#96b5b4;">cd </span><span>&quot;$</span><span style="color:#a3be8c;">( </span><span style="color:#bf616a;">dirname </span><span>&quot;$</span><span style="color:#a3be8c;">{</span><span style="color:#bf616a;">BASH_SOURCE[</span><span style="color:#d08770;">0</span><span style="color:#bf616a;">]</span><span style="color:#a3be8c;">}</span><span>&quot; </span><span style="color:#a3be8c;">)</span><span>&quot; &amp;&amp; </span><span style="color:#96b5b4;">pwd </span><span style="color:#a3be8c;">)
-</span><span style="color:#bf616a;">PASSWORD</span><span>=</span><span style="color:#a3be8c;">xxxxxx
+</span><span style="color:#bf616a;">PASSWORD</span><span>=</span><span style="color:#a3be8c;">root
 </span><span>
 </span><span style="color:#b48ead;">if </span><span style="color:#96b5b4;">[[ </span><span>$</span><span style="color:#bf616a;">1 </span><span>== &quot;</span><span style="color:#a3be8c;">check</span><span>&quot; </span><span style="color:#96b5b4;">]] </span><span>|| </span><span style="color:#96b5b4;">[[ </span><span>$</span><span style="color:#bf616a;">1 </span><span>== &quot;</span><span style="color:#a3be8c;">check_reload</span><span>&quot; </span><span style="color:#96b5b4;">]]
 </span><span style="color:#b48ead;">then
-</span><span>  </span><span style="color:#b48ead;">for</span><span> i </span><span style="color:#b48ead;">in </span><span>{20..101}
+</span><span>  </span><span style="color:#b48ead;">for</span><span> i </span><span style="color:#b48ead;">in </span><span>{2..255}
 </span><span>  </span><span style="color:#b48ead;">do
 </span><span>    </span><span style="color:#bf616a;">ip</span><span>=&quot;</span><span style="color:#a3be8c;">192.168.1.</span><span>$</span><span style="color:#bf616a;">i</span><span>&quot;
 </span><span>    </span><span style="color:#bf616a;">fping -c1 -t100 </span><span>$</span><span style="color:#bf616a;">ip </span><span style="color:#d08770;">2</span><span>&gt;/dev/null </span><span style="color:#d08770;">1</span><span>&gt;/dev/null
@@ -133,6 +140,19 @@
 </span><span>  </span><span style="color:#96b5b4;">echo </span><span>&quot;</span><span style="color:#a3be8c;">Ivalid Input, Use: check or check_reload</span><span>&quot;
 </span><span style="color:#b48ead;">fi
 </span></code></pre>
+<p>Give it the excutive permission:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>chmod+x ./checkpool.sh
+</span></code></pre>
+<p>To set the cronjob on the linux machine open the terminal and type:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>vi /etc/crontab
+</span></code></pre>
+<p>Copy nd paste the code below:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>*/30 * * * * /checkpool
+</span></code></pre>
+<p>Please let me know if you find any issue. <a href="https://t.me/airoweb">@airoweb</a></p>
+<blockquote>
+<p>Get <a href="https://braiins-os.com?utm_source=airoweb">Braiins OS+</a> to increase your mining devices efficiency!</p>
+</blockquote>
 
     </div>
 
