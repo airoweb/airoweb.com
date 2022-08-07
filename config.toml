@@ -1,7 +1,7 @@
 # The URL the site will be built for
 base_url = "https://airoweb.com"
 
-title = "Behzad's Techlogs | Code, Minig, Server"
+title = "Behzad's blog | Code, Minig, Server"
 description = "Here is my personal techlogs about code, mining, server"
 default_language = "en"
 generate_feed = true
@@ -31,8 +31,9 @@ author = "Behzad"
 after_dark_menu = [
     {url = "$BASE_URL", name = "Home"},
     {url = "$BASE_URL/categories", name = "Categories"},
-    {url = "$BASE_URL/tags", name = "Tags"},
+    # {url = "$BASE_URL/tags", name = "Tags"},
     {url = "https://braiins-os.com?utm_source=airoweb", name = "Braiins OS+"},
+    {url = "https://tippin.me/@airoweb", name = "Buy me a coffee"},
 ]
 
 after_dark_title = "Behzad's blog"
