@@ -1,218 +1,457 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Check pool status and restart BOSminer with Toolbox - Airoweb's blog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap">
+  <link rel="stylesheet" href="https://airoweb.com/assets/css/custom.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"><link rel="apple-touch-icon" sizes="180x180" href="https://airoweb.com/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://airoweb.com/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://airoweb.com/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="https://airoweb.com/images/favicon/site.webmanifest">
+    <link rel="mask-icon" href="https://airoweb.com/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="theme-color" content="#ffffff"><link rel="canonical" href="https://airoweb.com/check-pool-status-and-restart-bosminer-with-toolbox/" /><link rel="alternate" type="application/atom+xml"
+        title="RSS" href="https://airoweb.com/atom.xml"
+      ><meta name="author" content="Behzad"><meta property="article:published_time" content='2021-08-20' /><meta name="keywords" content="BOS+ Toolbox,Automation,"><meta name="generator" content="Zola">
+  <meta property="og:title" content="Check pool status and restart BOSminer with Toolbox" />
+  <meta property="og:url" content="https://airoweb.com/check-pool-status-and-restart-bosminer-with-toolbox/" /><meta property="og:site_name" content="Airoweb's blog" />
+  <meta property="og:locale" content="en_US" />
+  <meta name="twitter:card" content="summary" /><meta name="twitter:creator" content="@user" /><meta name="google-site-verification" content="0123457890abcdefg" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0123456789"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-  <!-- Enable responsiveness on mobile devices-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-
-  <title>Behzad&#x27;s blog | Code, Minig, Server</title>
-
-  
-  <link rel="alternate"
-    type="application/atom+xml"
-    title="RSS" href="https://airoweb.com/atom.xml">
-  
-
-  
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://airoweb.com/site.css">
-  
-
-  
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-5384911-16"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-
-    gtag('config', 'UA-5384911-16');
-  </script>
-
-  
+      gtag('config', 'G-0123456789');
+    </script>
 </head>
+<body>
+  <div class="container-fluid vh-100">
+    <div class="row h-100"><div
+    class="sidebar d-none d-xl-block col-auto mh-100 p-0 overflow-auto"
+  >
+    <aside class="d-flex flex-column justify-content-between h-100">
+      <div class="d-none mb-4 pt-5 px-4 text-center">
+        <div class="sidebar-avatar mb-2 mx-auto border border-3 rounded-circle">
+          <a href="https://airoweb.com/" target="_blank" rel="noopener noreferrer">
+    <img
+      src="https://airoweb.com/images/avatar.png"
+      alt="Behzad"
+      class="img-fluid"
+    >
+  </a>
+        </div>
+        <div class="mb-1">
+          <a
+            href="https://airoweb.com/"
+            class="sidebar-title fs-5 fw-bold text-decoration-none"
+          >
+            Airoweb's blog
+          </a>
+        </div>
+        <div class="fw-light">
+          Here is my personal techlogs about code, mining, server
+        </div>
+      </div>
 
-<body class="hack dark main container">
-  
-    
+      <div class="sidebar-nav list-group my-auto rounded-0 text-center"><a
+        href="https://airoweb.com/"
+        class="sidebar-nav-item list-group-item list-group-item-action border border-0"
+        data-bs-toggle="tooltip" data-bs-title="Home"
+      >
+        <span class="sidebar-nav-icon bi bi-house d-none d-xl-inline fs-4"></span>
+        <span class="sidebar-nav-text d-none">
+          Home
+        </span>
+      </a><a
+        href="https://airoweb.com/blog/"
+        class="sidebar-nav-item list-group-item list-group-item-action border border-0"
+        data-bs-toggle="tooltip" data-bs-title="Blog"
+      >
+        <span class="sidebar-nav-icon bi bi-file-earmark-text d-none d-xl-inline fs-4"></span>
+        <span class="sidebar-nav-text d-none">
+          Blog
+        </span>
+      </a><a
+        href="https://gersonbdev.github.io/"
+        class="sidebar-nav-item list-group-item list-group-item-action border border-0"
+        data-bs-toggle="tooltip" data-bs-title="Author"
+      >
+        <span class="sidebar-nav-icon bi bi-person d-none d-xl-inline fs-4"></span>
+        <span class="sidebar-nav-text d-none">
+          Author
+        </span>
+      </a><a
+        href="https://github.com/gersonbdev/ataraxia-zola"
+        class="sidebar-nav-item list-group-item list-group-item-action border border-0"
+        data-bs-toggle="tooltip" data-bs-title="About"
+      >
+        <span class="sidebar-nav-icon bi bi-question-octagon d-none d-xl-inline fs-4"></span>
+        <span class="sidebar-nav-text d-none">
+          About
+        </span>
+      </a></div>
+
+      <div class="sidebar-social d-none mt-4 pb-4 px-4">
+        <div class="container-fluid">
+          <div class="row justify-content-center">
+            <div class="col-auto px-2">
+        <a
+          href="mailto:behzad@airoweb.com"
+          target="_blank" rel="noopener noreferrer"
+          data-bs-toggle="tooltip"
+          data-bs-title='Email'
+          class="text-decoration-none"
+        >
+          <span class="bi bi-envelope-fill"></span>
+        </a>
+      </div><div class="col-auto px-2">
+        <a
+          href="https://github.com/3ehzad"
+          target="_blank" rel="noopener noreferrer"
+          data-bs-toggle="tooltip"
+          data-bs-title='GitHub'
+          class="text-decoration-none"
+        >
+          <span class="bi bi-github"></span>
+        </a>
+      </div><div class="col-auto px-2">
+        <a
+          href="https://twitter.com/airoweb"
+          target="_blank" rel="noopener noreferrer"
+          data-bs-toggle="tooltip"
+          data-bs-title='Twitter'
+          class="text-decoration-none"
+        >
+          <span class="bi bi-twitter"></span>
+        </a>
+      </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div><div class="col mh-100 overflow-auto px-0"><nav
+    class="navbar navbar-expand navbar-bg-light sticky-top border-bottom"
+  >
+    <div class="container-fluid"><button
+        type="button"
+        class="btn d-block d-xl-none fs-5"
+        data-bs-toggle="offcanvas" data-bs-target="#offcanvas"
+        aria-controls="offcanvas"
+      >
+        <span class="bi bi-list"></span>
+      </button>
+      
+      <div class="col-8">
         
-  
-  <header>
-    <nav itemscope itemtype="http://schema.org/SiteNavigationElement">
-      
-      <a itemprop="url"
-        class=""
-        href="https:&#x2F;&#x2F;airoweb.com">
-        <span itemprop="name">Home
-        </span></a>
-      
-      <a itemprop="url"
-        class=""
-        href="https:&#x2F;&#x2F;airoweb.com&#x2F;categories">
-        <span itemprop="name">Categories
-        </span></a>
-      
-      <a itemprop="url"
-        class=""
-        href="https:&#x2F;&#x2F;braiins-os.com?utm_source=airoweb">
-        <span itemprop="name">Braiins OS+
-        </span></a>
-      
-      <a itemprop="url"
-        class=""
-        href="https:&#x2F;&#x2F;tippin.me&#x2F;@airoweb">
-        <span itemprop="name">Buy me a coffee
-        </span></a>
-      
-    </nav>
-  </header>
-  
-  
-    
+          <div class="row justify-content-center justify-content-xl-start p-2 ps-xl-3 text-center"><div class="col-auto d-none d-xl-block">
+        <a
+          href="https://airoweb.com/"
+          class="text-decoration-none"
+        >
+          Home
+        </a>
+      </div>
+      <div class="col-auto d-none d-xl-block">
+        <span class="text-secondary">
+          »
+        </span>
+      </div><div class="col-auto">
+      <span
+        class="d-inline d-sm-none text-secondary"
+        data-bs-toggle="tooltip"
+        data-bs-title="Check pool status and restart BOSminer with Toolbox"
+      >
+        Check pool statu…
+      </span>
+      <span
+        class="d-none d-sm-inline text-secondary"
+        data-bs-toggle="tooltip"
+        data-bs-title="Check pool status and restart BOSminer with Toolbox"
+      >
+        Check pool status and restart BOSminer w…
+      </span>
+    </div>
+  </div>
+        
+      </div>
 
-<article itemscope itemtype="http://schema.org/BlogPosting">
-    <header>
-        <h1 itemprop="headline">Check pool status and restart BOSminer with Toolbox</h1>
-        <span class="muted">
-    <svg style="margin-bottom:-3px" class="i-clock" viewBox="0 0 32 32"
-         width="16" height="16" fill="none" stroke="currentcolor"
-         stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-        <circle cx="16" cy="16" r="14"/>
-        <path d="M16 8 L16 16 20 20"/>
-    </svg>
-    <span>2 minute read</span>
-    <svg style="margin-bottom: -3px" class="i-edit" viewBox="0 0 32 32"
-         width="16" height="16" fill="none" stroke="currentcolor"
-         stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
-        <path d="M30 7 L25 2 5 22 3 29 10 27 Z M21 6 L26 11 Z M5 22 L10 27 Z"/>
-    </svg>
-
-    Published: 2021-08-20
-</span>
-    </header>
-    <div itemprop="articleBody">
-      <p>The pool URLs in the Braiins OS+ and mostly all firmwares are failover for each other and if the first pool deads, the second one will work.</p>
+      <button
+    type="button" data-bs-toggle="modal" data-bs-target="#searchModal"
+    class="btn border border-0"
+  >
+    <span class="bi bi-search fs-5"></span>
+  </button>
+    </div>
+  </nav><div class="d-flex flex-column h-100"><main class="container">
+    <div class="row justify-content-center mt-5 mb-5">
+      <div class="col-11 col-lg-10 col-xxl-9">
+        <h1 class="mb-4 display-4">
+          Check pool status and restart BOSminer with Toolbox
+        </h1>
+        <p>The pool URLs in the Braiins OS+ and mostly all firmwares are failover for each other and if the first pool deads, the second one will work.</p>
 <span id="continue-reading"></span>
 <p>In some cases the farm has one URL and you need to check the machines for their Status and reload them.</p>
 <p>Run the command to download the latest BOS+ Toolbox:</p>
-<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>cd / &amp;&amp; wget http://feeds.braiins-os.com/toolbox/latest/bos-toolbox &amp;&amp; chmod+x ./bos-toolbox
+<pre style="background-color:#282828;color:#fdf4c1aa;"><code><span>cd / &amp;&amp; wget http://feeds.braiins-os.com/toolbox/latest/bos-toolbox &amp;&amp; chmod+x ./bos-toolbox
 </span></code></pre>
 <p>Save the code below in a file &quot;checkpool.sh&quot; and save it in the beside of Toolbox.</p>
-<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#65737e;">#!/bin/bash
+<pre data-lang="bash" style="background-color:#282828;color:#fdf4c1aa;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="font-style:italic;color:#928374;">#!/bin/bash
 </span><span>
-</span><span style="color:#bf616a;">DIR</span><span>=$</span><span style="color:#a3be8c;">( </span><span style="color:#96b5b4;">cd </span><span>&quot;$</span><span style="color:#a3be8c;">( </span><span style="color:#bf616a;">dirname </span><span>&quot;$</span><span style="color:#a3be8c;">{</span><span style="color:#bf616a;">BASH_SOURCE[</span><span style="color:#d08770;">0</span><span style="color:#bf616a;">]</span><span style="color:#a3be8c;">}</span><span>&quot; </span><span style="color:#a3be8c;">)</span><span>&quot; &amp;&amp; </span><span style="color:#96b5b4;">pwd </span><span style="color:#a3be8c;">)
-</span><span style="color:#bf616a;">PASSWORD</span><span>=</span><span style="color:#a3be8c;">root
+</span><span style="color:#fdf4c1;">DIR</span><span style="color:#fe8019;">=</span><span style="color:#b8bb26;">$( </span><span style="color:#fabd2f;">cd </span><span style="color:#b8bb26;">&quot;$( </span><span style="color:#fdf4c1;">dirname </span><span style="color:#b8bb26;">&quot;${</span><span style="color:#fdf4c1;">BASH_SOURCE[</span><span style="color:#d3869b;">0</span><span style="color:#fdf4c1;">]</span><span style="color:#b8bb26;">}&quot; )&quot; </span><span style="color:#fe8019;">&amp;&amp; </span><span style="color:#fabd2f;">pwd </span><span style="color:#b8bb26;">)
+</span><span style="color:#fdf4c1;">PASSWORD</span><span style="color:#fe8019;">=</span><span style="color:#b8bb26;">root
 </span><span>
-</span><span style="color:#b48ead;">if </span><span style="color:#96b5b4;">[[ </span><span>$</span><span style="color:#bf616a;">1 </span><span>== &quot;</span><span style="color:#a3be8c;">check</span><span>&quot; </span><span style="color:#96b5b4;">]] </span><span>|| </span><span style="color:#96b5b4;">[[ </span><span>$</span><span style="color:#bf616a;">1 </span><span>== &quot;</span><span style="color:#a3be8c;">check_reload</span><span>&quot; </span><span style="color:#96b5b4;">]]
-</span><span style="color:#b48ead;">then
-</span><span>  </span><span style="color:#b48ead;">for</span><span> i </span><span style="color:#b48ead;">in </span><span>{2..255}
-</span><span>  </span><span style="color:#b48ead;">do
-</span><span>    </span><span style="color:#bf616a;">ip</span><span>=&quot;</span><span style="color:#a3be8c;">192.168.1.</span><span>$</span><span style="color:#bf616a;">i</span><span>&quot;
-</span><span>    </span><span style="color:#bf616a;">fping -c1 -t100 </span><span>$</span><span style="color:#bf616a;">ip </span><span style="color:#d08770;">2</span><span>&gt;/dev/null </span><span style="color:#d08770;">1</span><span>&gt;/dev/null
-</span><span>    </span><span style="color:#b48ead;">if </span><span style="color:#96b5b4;">[ </span><span>&quot;$</span><span style="color:#bf616a;">?</span><span>&quot; = 0 </span><span style="color:#96b5b4;">]
-</span><span>    </span><span style="color:#b48ead;">then
-</span><span>      </span><span style="color:#b48ead;">if </span><span>! </span><span style="color:#96b5b4;">echo </span><span>&#39;</span><span style="color:#a3be8c;">{&quot;command&quot;:&quot;version&quot;}</span><span>&#39; | </span><span style="color:#bf616a;">nc </span><span>$</span><span style="color:#bf616a;">ip</span><span> 4028 |</span><span style="color:#bf616a;">jq</span><span> .&quot;</span><span style="color:#a3be8c;">VERSION</span><span>&quot;</span><span style="color:#b48ead;">[]</span><span>.&quot;</span><span style="color:#a3be8c;">BOSminer</span><span>&quot;  | </span><span style="color:#bf616a;">grep -q</span><span> bosminer
-</span><span>      </span><span style="color:#b48ead;">then
-</span><span>        </span><span style="color:#96b5b4;">echo </span><span>&quot;$</span><span style="color:#bf616a;">ip</span><span style="color:#a3be8c;"> no bosminer found</span><span>&quot;
-</span><span>      </span><span style="color:#b48ead;">else
-</span><span>        </span><span style="color:#bf616a;">pool_status</span><span>=$</span><span style="color:#a3be8c;">(</span><span style="color:#96b5b4;">echo </span><span>&#39;</span><span style="color:#a3be8c;">{&quot;command&quot;:&quot;pools&quot;}</span><span>&#39; | </span><span style="color:#bf616a;">nc </span><span>$</span><span style="color:#bf616a;">ip</span><span style="color:#a3be8c;"> 4028 </span><span>| </span><span style="color:#bf616a;">jq</span><span style="color:#a3be8c;"> .</span><span>&quot;</span><span style="color:#a3be8c;">POOLS</span><span>&quot;</span><span style="color:#b48ead;">[]</span><span style="color:#a3be8c;">.</span><span>&quot;</span><span style="color:#a3be8c;">Status</span><span>&quot;</span><span style="color:#a3be8c;">)
-</span><span>        </span><span style="color:#b48ead;">if </span><span style="color:#96b5b4;">[[ </span><span>$</span><span style="color:#bf616a;">pool_status </span><span>== &#39;</span><span style="color:#a3be8c;">Dead</span><span>&#39; </span><span style="color:#96b5b4;">]]
-</span><span>        </span><span style="color:#b48ead;">then
-</span><span>          </span><span style="color:#96b5b4;">echo </span><span>&quot;$</span><span style="color:#bf616a;">ip</span><span style="color:#a3be8c;"> : pool is </span><span>$</span><span style="color:#bf616a;">pool_status</span><span style="color:#a3be8c;">, Restart miner</span><span>&quot;
-</span><span>          </span><span style="color:#b48ead;">if </span><span style="color:#96b5b4;">[[ </span><span>$</span><span style="color:#bf616a;">1 </span><span>== &quot;</span><span style="color:#a3be8c;">check_reload</span><span>&quot; </span><span style="color:#96b5b4;">]]
-</span><span>          </span><span style="color:#b48ead;">then
-</span><span>            &quot;$</span><span style="color:#bf616a;">DIR</span><span>&quot;</span><span style="color:#bf616a;">/bos-toolbox</span><span> command $</span><span style="color:#bf616a;">ip -p </span><span>$</span><span style="color:#bf616a;">PASSWORD </span><span>&quot;</span><span style="color:#a3be8c;">/etc/bosminer.toml &amp;&amp; /etc/init.d/bosminer restart</span><span>&quot;
-</span><span>          </span><span style="color:#b48ead;">fi
-</span><span>        </span><span style="color:#b48ead;">else
-</span><span>          </span><span style="color:#96b5b4;">echo </span><span>&quot;$</span><span style="color:#bf616a;">ip</span><span style="color:#a3be8c;"> : pool status is </span><span>$</span><span style="color:#bf616a;">pool_status</span><span>&quot;
-</span><span>        </span><span style="color:#b48ead;">fi
-</span><span>      </span><span style="color:#b48ead;">fi
-</span><span>    </span><span style="color:#b48ead;">else
-</span><span>      </span><span style="color:#96b5b4;">echo </span><span>&quot;$</span><span style="color:#bf616a;">ip</span><span style="color:#a3be8c;"> OFFLINE</span><span>&quot;
-</span><span>    </span><span style="color:#b48ead;">fi
-</span><span>  </span><span style="color:#b48ead;">done
-</span><span style="color:#b48ead;">else
-</span><span>  </span><span style="color:#96b5b4;">echo </span><span>&quot;</span><span style="color:#a3be8c;">Ivalid Input, Use: check or check_reload</span><span>&quot;
-</span><span style="color:#b48ead;">fi
+</span><span style="color:#fa5c4b;">if </span><span style="color:#fabd2f;">[[ </span><span style="color:#fdf4c1;">$1 </span><span style="color:#fe8019;">== </span><span style="color:#b8bb26;">&quot;check&quot; </span><span style="color:#fabd2f;">]] </span><span style="color:#fe8019;">|| </span><span style="color:#fabd2f;">[[ </span><span style="color:#fdf4c1;">$1 </span><span style="color:#fe8019;">== </span><span style="color:#b8bb26;">&quot;check_reload&quot; </span><span style="color:#fabd2f;">]]
+</span><span style="color:#fa5c4b;">then
+</span><span>  </span><span style="color:#fa5c4b;">for</span><span> i </span><span style="color:#fa5c4b;">in </span><span>{2..255}
+</span><span>  </span><span style="color:#fa5c4b;">do
+</span><span>    </span><span style="color:#fdf4c1;">ip</span><span style="color:#fe8019;">=</span><span style="color:#b8bb26;">&quot;192.168.1.$</span><span style="color:#fdf4c1;">i</span><span style="color:#b8bb26;">&quot;
+</span><span>    </span><span style="color:#fdf4c1;">fping -c1 -t100 $ip </span><span style="color:#d3869b;">2</span><span style="color:#fe8019;">&gt;</span><span style="color:#fdf4c1;">/dev/null </span><span style="color:#d3869b;">1</span><span style="color:#fe8019;">&gt;</span><span style="color:#fdf4c1;">/dev/null
+</span><span>    </span><span style="color:#fa5c4b;">if </span><span style="color:#fabd2f;">[ </span><span style="color:#b8bb26;">&quot;$</span><span style="color:#fdf4c1;">?</span><span style="color:#b8bb26;">&quot; </span><span style="color:#fe8019;">=</span><span style="color:#fdf4c1;"> 0 </span><span style="color:#fabd2f;">]
+</span><span>    </span><span style="color:#fa5c4b;">then
+</span><span>      </span><span style="color:#fa5c4b;">if </span><span style="color:#fe8019;">! </span><span style="color:#fabd2f;">echo </span><span style="color:#b8bb26;">&#39;{&quot;command&quot;:&quot;version&quot;}&#39; </span><span style="color:#fe8019;">| </span><span style="color:#fdf4c1;">nc $ip 4028 </span><span style="color:#fe8019;">|</span><span style="color:#fdf4c1;">jq .</span><span style="color:#b8bb26;">&quot;VERSION&quot;</span><span style="color:#fa5c4b;">[]</span><span style="color:#fdf4c1;">.</span><span style="color:#b8bb26;">&quot;BOSminer&quot;  </span><span style="color:#fe8019;">| </span><span style="color:#fdf4c1;">grep -q bosminer
+</span><span>      </span><span style="color:#fa5c4b;">then
+</span><span>        </span><span style="color:#fabd2f;">echo </span><span style="color:#b8bb26;">&quot;$</span><span style="color:#fdf4c1;">ip</span><span style="color:#b8bb26;"> no bosminer found&quot;
+</span><span>      </span><span style="color:#fa5c4b;">else
+</span><span>        </span><span style="color:#fdf4c1;">pool_status</span><span style="color:#fe8019;">=</span><span style="color:#b8bb26;">$(</span><span style="color:#fabd2f;">echo </span><span style="color:#b8bb26;">&#39;{&quot;command&quot;:&quot;pools&quot;}&#39; </span><span style="color:#fe8019;">| </span><span style="color:#fdf4c1;">nc $ip 4028 </span><span style="color:#fe8019;">| </span><span style="color:#fdf4c1;">jq .</span><span style="color:#b8bb26;">&quot;POOLS&quot;</span><span style="color:#fa5c4b;">[]</span><span style="color:#fdf4c1;">.</span><span style="color:#b8bb26;">&quot;Status&quot;)
+</span><span>        </span><span style="color:#fa5c4b;">if </span><span style="color:#fabd2f;">[[ </span><span style="color:#fdf4c1;">$pool_status </span><span style="color:#fe8019;">== </span><span style="color:#b8bb26;">&#39;Dead&#39; </span><span style="color:#fabd2f;">]]
+</span><span>        </span><span style="color:#fa5c4b;">then
+</span><span>          </span><span style="color:#fabd2f;">echo </span><span style="color:#b8bb26;">&quot;$</span><span style="color:#fdf4c1;">ip</span><span style="color:#b8bb26;"> : pool is $</span><span style="color:#fdf4c1;">pool_status</span><span style="color:#b8bb26;">, Restart miner&quot;
+</span><span>          </span><span style="color:#fa5c4b;">if </span><span style="color:#fabd2f;">[[ </span><span style="color:#fdf4c1;">$1 </span><span style="color:#fe8019;">== </span><span style="color:#b8bb26;">&quot;check_reload&quot; </span><span style="color:#fabd2f;">]]
+</span><span>          </span><span style="color:#fa5c4b;">then
+</span><span>            </span><span style="color:#b8bb26;">&quot;$</span><span style="color:#fdf4c1;">DIR</span><span style="color:#b8bb26;">&quot;</span><span style="color:#fdf4c1;">/bos-toolbox command $ip -p $PASSWORD </span><span style="color:#b8bb26;">&quot;/etc/bosminer.toml &amp;&amp; /etc/init.d/bosminer restart&quot;
+</span><span>          </span><span style="color:#fa5c4b;">fi
+</span><span>        </span><span style="color:#fa5c4b;">else
+</span><span>          </span><span style="color:#fabd2f;">echo </span><span style="color:#b8bb26;">&quot;$</span><span style="color:#fdf4c1;">ip</span><span style="color:#b8bb26;"> : pool status is $</span><span style="color:#fdf4c1;">pool_status</span><span style="color:#b8bb26;">&quot;
+</span><span>        </span><span style="color:#fa5c4b;">fi
+</span><span>      </span><span style="color:#fa5c4b;">fi
+</span><span>    </span><span style="color:#fa5c4b;">else
+</span><span>      </span><span style="color:#fabd2f;">echo </span><span style="color:#b8bb26;">&quot;$</span><span style="color:#fdf4c1;">ip</span><span style="color:#b8bb26;"> OFFLINE&quot;
+</span><span>    </span><span style="color:#fa5c4b;">fi
+</span><span>  </span><span style="color:#fa5c4b;">done
+</span><span style="color:#fa5c4b;">else
+</span><span>  </span><span style="color:#fabd2f;">echo </span><span style="color:#b8bb26;">&quot;Ivalid Input, Use: check or check_reload&quot;
+</span><span style="color:#fa5c4b;">fi
 </span></code></pre>
 <p>Give it the excutive permission:</p>
-<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>chmod+x ./checkpool.sh
+<pre style="background-color:#282828;color:#fdf4c1aa;"><code><span>chmod+x ./checkpool.sh
 </span></code></pre>
 <p>To set the cronjob on the linux machine open the terminal and type:</p>
-<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>vi /etc/crontab
+<pre style="background-color:#282828;color:#fdf4c1aa;"><code><span>vi /etc/crontab
 </span></code></pre>
 <p>Copy nd paste the code below:</p>
-<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>*/30 * * * * /checkpool
+<pre style="background-color:#282828;color:#fdf4c1aa;"><code><span>*/30 * * * * /checkpool
 </span></code></pre>
-<p>Please let me know if you find any issue. <a href="https://t.me/airoweb">@airoweb</a></p>
+<p>Please let me know if you find any issue. <a rel="noopener nofollow noreferrer" target="_blank" href="https://t.me/airoweb">@airoweb</a></p>
 <blockquote>
-<p>Get <a href="https://braiins-os.com?utm_source=airoweb">Braiins OS+</a> to increase your mining devices efficiency!</p>
+<p>Get <a rel="noopener nofollow noreferrer" target="_blank" href="https://braiins-os.com?utm_source=airoweb">Braiins OS+</a> to increase your mining devices efficiency!</p>
 </blockquote>
 
+      </div>
     </div>
-
-    
-        <footer>
-            <hr>
-            <p>
-                
-                    Published by Behzad
-                
-                
-                    
-                    in <a href="https://airoweb.com/categories/braiins-os/">Braiins OS+</a>
-                
-                
-                    and tagged
-                    
-                        <a href="https://airoweb.com/tags/bos-toolbox/">BOS+ Toolbox</a>
-                        
-                            
-                                
-                                    and
-                                
-                            
-                        
-                    
-                        <a href="https://airoweb.com/tags/automation/">Automation</a>
-                        
-                            
-                        
-                    
-                
-            </p>
-            
-            
-        </footer>
-    
-</article>
-
-
-  
-  <footer>
-    Powered by <a href="https://github.com/getzola/zola">Zola | Rust</a> 
-    <div class="content_icons">
-      
-      <a class="icon_wrapper" href="https://github.com/3ehzad">
-        <i class="fab fa-github"></i>
-      </a>
-    
-      <a class="icon_wrapper" href="https://twitter.com/airoweb">
-        <i class="fab fa-twitter"></i>
-      </a>
-    
-      <a class="icon_wrapper" href="https://t.me/airoweb">
-        <i class="fab fa-telegram"></i>
-      </a>
-    
-  </div>
+  </main><footer class="container-fluid mt-auto">
+    <div class="row justify-content-center">
+      <div class="col-10">
+        <div class="row pt-3 pb-4 border-top">
+          <div class="col-12 col-md-6 mb-2 mb-md-0 text-center text-md-start">
+            <small class="text-secondary">
+              © 2023
+              <a 
+                href="https://airoweb.com/"
+                target="_blank" rel="noopener noreferrer"
+                class="text-decoration-none"
+              >
+                Behzad&period;
+              </a>
+              <a
+                href="https://creativecommons.org/licenses/by/4.0/"
+                data-bs-toggle="tooltip"
+                data-bs-title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author."
+                class="text-secondary text-decoration-none"
+              >
+                Some rights reserved.
+              </a>
+            </small>
+          </div>
+          <div class="col-12 col-md-6 text-center text-md-end">
+            <small class="text-secondary">
+              Powered by
+              <a 
+                href="https://www.getzola.org/"
+                target="_blank" rel="noopener noreferrer"
+                class="text-decoration-none"
+              >
+                Zola
+              </a>
+              with
+              <a 
+                href="https://github.com/gersonbdev/ataraxia-zola"
+                target="_blank" rel="noopener noreferrer"
+                class="text-decoration-none"
+              >
+                Ataraxia
+              </a>
+              theme.
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
   </footer>
-</body>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
+    <div class="offcanvas-body p-0">
+      <div class="sidebar container-fluid vh-100">
+        <div class="row h-100">
+          <div
+            class="col mh-100 px-0 overflow-auto"
+          >
+            <aside class="d-flex flex-column justify-content-between h-100">
+              <div class="mb-4 pt-5 px-3 text-center">
+                <div class="sidebar-avatar mb-2 mx-auto border border-3 rounded-circle">
+                  <a href="https://airoweb.com/" target="_blank" rel="noopener noreferrer">
+    <img
+      src="https://airoweb.com/images/avatar.png"
+      alt="Behzad"
+      class="img-fluid"
+    >
+  </a>
+                </div>
+                <div>
+                  <a
+                    href="https://airoweb.com/"
+                    class="sidebar-title fs-5 fw-bold text-decoration-none"
+                  >
+                    Airoweb's blog
+                  </a>
+                </div>
+              </div>
 
+              <div class="sidebar-nav list-group my-auto rounded-0 text-start"><a
+        href="https://airoweb.com/"
+        class="sidebar-nav-item list-group-item list-group-item-action border border-0"
+        data-bs-toggle="tooltip" data-bs-title="Home"
+      >
+        <span class="sidebar-nav-icon bi bi-house ms-2 me-1 fs-4"></span>
+        <span class="sidebar-nav-text">Home</span>
+      </a><a
+        href="https://airoweb.com/blog/"
+        class="sidebar-nav-item list-group-item list-group-item-action border border-0"
+        data-bs-toggle="tooltip" data-bs-title="Blog"
+      >
+        <span class="sidebar-nav-icon bi bi-file-earmark-text ms-2 me-1 fs-4"></span>
+        <span class="sidebar-nav-text">Blog</span>
+      </a><a
+        href="https://gersonbdev.github.io/"
+        class="sidebar-nav-item list-group-item list-group-item-action border border-0"
+        data-bs-toggle="tooltip" data-bs-title="Author"
+      >
+        <span class="sidebar-nav-icon bi bi-person ms-2 me-1 fs-4"></span>
+        <span class="sidebar-nav-text">Author</span>
+      </a><a
+        href="https://github.com/gersonbdev/ataraxia-zola"
+        class="sidebar-nav-item list-group-item list-group-item-action border border-0"
+        data-bs-toggle="tooltip" data-bs-title="About"
+      >
+        <span class="sidebar-nav-icon bi bi-question-octagon ms-2 me-1 fs-4"></span>
+        <span class="sidebar-nav-text">About</span>
+      </a></div>
+
+              <div class="sidebar-social mt-4 pb-4 px-3">
+                <div class="container-fluid">
+                  <div class="row justify-content-center">
+                    <div class="col-auto px-2">
+        <a
+          href="mailto:behzad@airoweb.com"
+          target="_blank" rel="noopener noreferrer"
+          data-bs-toggle="tooltip"
+          data-bs-title='Email'
+          class="text-decoration-none"
+        >
+          <span class="bi bi-envelope-fill"></span>
+        </a>
+      </div><div class="col-auto px-2">
+        <a
+          href="https://github.com/3ehzad"
+          target="_blank" rel="noopener noreferrer"
+          data-bs-toggle="tooltip"
+          data-bs-title='GitHub'
+          class="text-decoration-none"
+        >
+          <span class="bi bi-github"></span>
+        </a>
+      </div><div class="col-auto px-2">
+        <a
+          href="https://twitter.com/airoweb"
+          target="_blank" rel="noopener noreferrer"
+          data-bs-toggle="tooltip"
+          data-bs-title='Twitter'
+          class="text-decoration-none"
+        >
+          <span class="bi bi-twitter"></span>
+        </a>
+      </div>
+                  </div>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="searchModalLabel">
+          Search
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div
+          id="searchInput" role="search" 
+          class="d-flex mb-3 border rounded-5 bg-white"
+        >
+          <input
+            id="search" type="search"
+            class="form-control border border-0 rounded-5 rounded-end"
+            placeholder="Search"
+            aria-label="Search"
+          >
+          <div class="rounded-5 rounded-start py-2 ps-2 pe-3">
+            <span class="bi bi-search"></span>
+          </div>
+        </div>
+        <div class="search-results">
+          <div class="search-results__items">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <script src="https://airoweb.com/assets/js/bootstrap/bootstrap.bundle.min.js"></script>
+  <script>
+    const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+    const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+    const myModal = document.getElementById('searchModal');
+    const myInput = document.getElementById('searchInput');
+
+    myModal.addEventListener('shown.bs.modal', () => {
+      myInput.focus()
+    });
+  </script>
+  <script src="https://airoweb.com/elasticlunr.min.js"></script>
+  <script src="https://airoweb.com/search_index.en.js"></script><script src="https://airoweb.com/assets/js/search/search.js"></script>
+</body>
 </html>

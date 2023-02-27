@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>How to call BOSminer API in Python? - Airoweb's blog</title>
+  <title>Blog - Airoweb's blog</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap">
@@ -14,11 +14,11 @@
     <link rel="manifest" href="https://airoweb.com/images/favicon/site.webmanifest">
     <link rel="mask-icon" href="https://airoweb.com/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#2d89ef">
-    <meta name="theme-color" content="#ffffff"><link rel="canonical" href="https://airoweb.com/how-to-call-bosminer-api-in-python/" /><link rel="alternate" type="application/atom+xml"
+    <meta name="theme-color" content="#ffffff"><link rel="canonical" href="https://airoweb.com/blog/" /><link rel="alternate" type="application/atom+xml"
         title="RSS" href="https://airoweb.com/atom.xml"
-      ><meta name="author" content="Behzad"><meta property="article:published_time" content='2021-07-18' /><meta name="keywords" content="bosminer,api,python,"><meta name="generator" content="Zola">
-  <meta property="og:title" content="How to call BOSminer API in Python?" />
-  <meta property="og:url" content="https://airoweb.com/how-to-call-bosminer-api-in-python/" /><meta property="og:site_name" content="Airoweb's blog" />
+      ><meta name="author" content="Behzad"><meta name="description" content="Blog site description." /><meta name="generator" content="Zola">
+  <meta property="og:title" content="Blog" />
+  <meta property="og:url" content="https://airoweb.com/blog/" /><meta property="og:description" content="Blog site description." /><meta property="og:site_name" content="Airoweb's blog" />
   <meta property="og:locale" content="en_US" />
   <meta name="twitter:card" content="summary" /><meta name="twitter:creator" content="@user" /><meta name="google-site-verification" content="0123457890abcdefg" />
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-0123456789"></script>
@@ -33,10 +33,10 @@
 <body>
   <div class="container-fluid vh-100">
     <div class="row h-100"><div
-    class="sidebar d-none d-xl-block col-auto mh-100 p-0 overflow-auto"
+    class="sidebar d-none d-lg-block col-lg-3 col-xl-2 mh-100 p-0 overflow-auto"
   >
     <aside class="d-flex flex-column justify-content-between h-100">
-      <div class="d-none mb-4 pt-5 px-4 text-center">
+      <div class="d-none d-md-block mb-4 pt-5 px-4 text-center">
         <div class="sidebar-avatar mb-2 mx-auto border border-3 rounded-circle">
           <a href="https://airoweb.com/" target="_blank" rel="noopener noreferrer">
     <img
@@ -64,8 +64,8 @@
         class="sidebar-nav-item list-group-item list-group-item-action border border-0"
         data-bs-toggle="tooltip" data-bs-title="Home"
       >
-        <span class="sidebar-nav-icon bi bi-house d-none d-xl-inline fs-4"></span>
-        <span class="sidebar-nav-text d-none">
+        <span class="sidebar-nav-icon bi bi-house d-none fs-4"></span>
+        <span class="sidebar-nav-text d-none d-md-inline">
           Home
         </span>
       </a><a
@@ -73,8 +73,8 @@
         class="sidebar-nav-item list-group-item list-group-item-action border border-0"
         data-bs-toggle="tooltip" data-bs-title="Blog"
       >
-        <span class="sidebar-nav-icon bi bi-file-earmark-text d-none d-xl-inline fs-4"></span>
-        <span class="sidebar-nav-text d-none">
+        <span class="sidebar-nav-icon bi bi-file-earmark-text d-none fs-4"></span>
+        <span class="sidebar-nav-text d-none d-md-inline">
           Blog
         </span>
       </a><a
@@ -82,8 +82,8 @@
         class="sidebar-nav-item list-group-item list-group-item-action border border-0"
         data-bs-toggle="tooltip" data-bs-title="Author"
       >
-        <span class="sidebar-nav-icon bi bi-person d-none d-xl-inline fs-4"></span>
-        <span class="sidebar-nav-text d-none">
+        <span class="sidebar-nav-icon bi bi-person d-none fs-4"></span>
+        <span class="sidebar-nav-text d-none d-md-inline">
           Author
         </span>
       </a><a
@@ -91,13 +91,13 @@
         class="sidebar-nav-item list-group-item list-group-item-action border border-0"
         data-bs-toggle="tooltip" data-bs-title="About"
       >
-        <span class="sidebar-nav-icon bi bi-question-octagon d-none d-xl-inline fs-4"></span>
-        <span class="sidebar-nav-text d-none">
+        <span class="sidebar-nav-icon bi bi-question-octagon d-none fs-4"></span>
+        <span class="sidebar-nav-text d-none d-md-inline">
           About
         </span>
       </a></div>
 
-      <div class="sidebar-social d-none mt-4 pb-4 px-4">
+      <div class="sidebar-social d-none d-md-block mt-4 pb-4 px-4">
         <div class="container-fluid">
           <div class="row justify-content-center">
             <div class="col-auto px-2">
@@ -140,7 +140,7 @@
   >
     <div class="container-fluid"><button
         type="button"
-        class="btn d-block d-xl-none fs-5"
+        class="btn d-block d-lg-none fs-5"
         data-bs-toggle="offcanvas" data-bs-target="#offcanvas"
         aria-controls="offcanvas"
       >
@@ -149,7 +149,7 @@
       
       <div class="col-8">
         
-          <div class="row justify-content-center justify-content-xl-start p-2 ps-xl-3 text-center"><div class="col-auto d-none d-xl-block">
+          <div class="row justify-content-center justify-content-lg-start p-2 ps-xl-3 text-center"><div class="col-auto d-none d-xl-block">
         <a
           href="https://airoweb.com/"
           class="text-decoration-none"
@@ -165,16 +165,16 @@
       <span
         class="d-inline d-sm-none text-secondary"
         data-bs-toggle="tooltip"
-        data-bs-title="How to call BOSminer API in Python?"
+        data-bs-title="Blog"
       >
-        How to call BOSm…
+        Blog
       </span>
       <span
         class="d-none d-sm-inline text-secondary"
         data-bs-toggle="tooltip"
-        data-bs-title="How to call BOSminer API in Python?"
+        data-bs-title="Blog"
       >
-        How to call BOSminer API in Python?
+        Blog
       </span>
     </div>
   </div>
@@ -189,27 +189,15 @@
   </button>
     </div>
   </nav><div class="d-flex flex-column h-100"><main class="container">
-    <div class="row justify-content-center mt-5 mb-5">
-      <div class="col-11 col-lg-10 col-xxl-9">
-        <h1 class="mb-4 display-4">
-          How to call BOSminer API in Python?
-        </h1>
-        <pre data-lang="python" style="background-color:#282828;color:#fdf4c1aa;" class="language-python "><code class="language-python" data-lang="python"><span style="font-style:italic;color:#928374;">#!/usr/bin/python3
-</span><span style="color:#fa5c4b;">import </span><span>socket
-</span><span>s </span><span style="color:#fe8019;">= </span><span style="color:#fdf4c1;">socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-</span><span style="color:#fdf4c1;">s.connect((</span><span style="color:#b8bb26;">&quot;10.10.1.2&quot;</span><span style="color:#fdf4c1;">, </span><span style="color:#d3869b;">4028</span><span style="color:#fdf4c1;">))
-</span><span style="color:#fdf4c1;">s.send(</span><span style="color:#fa5c4b;">b</span><span style="color:#b8bb26;">&#39;{&quot;command&quot;:&quot;pools&quot;}\n&#39;</span><span style="color:#fdf4c1;">)
-</span><span>data </span><span style="color:#fe8019;">= </span><span style="color:#fdf4c1;">s.recv(</span><span style="color:#d3869b;">2048</span><span style="color:#fdf4c1;">)
-</span><span style="color:#fdf4c1;">s.close()
-</span><span style="color:#fabd2f;">print</span><span style="color:#fdf4c1;">(data.decode(</span><span style="color:#b8bb26;">&quot;ascii&quot;</span><span style="color:#fdf4c1;">))
-</span></code></pre>
-<blockquote>
-<p>Get <a rel="noopener nofollow noreferrer" target="_blank" href="https://braiins-os.com?utm_source=airoweb">Braiins OS+</a> to increase your mining devices efficiency!</p>
-</blockquote>
-
+    <div class="row justify-content-center mt-4 mb-4">
+      <div class="col-11 col-lg-10">
+        
       </div>
     </div>
-  </main><footer class="container-fluid mt-auto">
+  </main>
+  <div class="mt-auto">
+    
+  </div><footer class="container-fluid mt-auto">
     <div class="row justify-content-center">
       <div class="col-10">
         <div class="row pt-3 pb-4 border-top">
