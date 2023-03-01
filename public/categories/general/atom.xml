@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+	<title>Behzad&#x27;s blog | Code, Minig, Server - General</title>
+	<subtitle>Here is my personal techlogs about code, mining, server</subtitle>
+	<link href="https://airoweb.com/categories/general/atom.xml" rel="self" type="application/atom+xml"/>
+  <link href="https://airoweb.com"/>
+	<generator uri="https://www.getzola.org/">Zola</generator>
+	<updated>2021-02-11T00:00:00+00:00</updated>
+	<id>https://airoweb.com/categories/general/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Relunch personal blog with Rust</title>
+		<published>2021-02-11T00:00:00+00:00</published>
+		<updated>2021-02-11T00:00:00+00:00</updated>
+		<link href="https://airoweb.com/relunch-personal-blog/" type="text/html"/>
+		<id>https://airoweb.com/relunch-personal-blog/</id>
+		<content type="html">&lt;p&gt;I decided to relunch my personal techlogs with a Rust based static site generator called &amp;quot;Zola&amp;quot;.&lt;&#x2F;p&gt;
+&lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;
+&lt;p&gt;at the first glance it was easy, however, it was tricky. So I hope sharing my techlogs can be helpful for someone, somewhere, sometimes.&lt;&#x2F;p&gt;
+&lt;p&gt;Cheers!&lt;&#x2F;p&gt;
+</content>
+	</entry>
+</feed>
