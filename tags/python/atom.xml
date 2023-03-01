@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+	<title>Behzad&#x27;s blog | Code, Minig, Server - python</title>
+	<subtitle>Here is my personal techlogs about code, mining, server</subtitle>
+	<link href="https://airoweb.com/tags/python/atom.xml" rel="self" type="application/atom+xml"/>
+  <link href="https://airoweb.com"/>
+	<generator uri="https://www.getzola.org/">Zola</generator>
+	<updated>2021-07-18T00:00:00+00:00</updated>
+	<id>https://airoweb.com/tags/python/atom.xml</id>
+	<entry xml:lang="en">
+		<title>How to call BOSminer API in Python?</title>
+		<published>2021-07-18T00:00:00+00:00</published>
+		<updated>2021-07-18T00:00:00+00:00</updated>
+		<link href="https://airoweb.com/how-to-call-bosminer-api-in-python/" type="text/html"/>
+		<id>https://airoweb.com/how-to-call-bosminer-api-in-python/</id>
+		<content type="html">&lt;pre data-lang=&quot;python&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-python &quot;&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span style=&quot;color:#65737e;&quot;&gt;#!&#x2F;usr&#x2F;bin&#x2F;python3
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;import &lt;&#x2F;span&gt;&lt;span&gt;socket
+&lt;&#x2F;span&gt;&lt;span&gt;s = socket.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;socket&lt;&#x2F;span&gt;&lt;span&gt;(socket.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;AF_INET&lt;&#x2F;span&gt;&lt;span&gt;, socket.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;SOCK_STREAM&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;s.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;connect&lt;&#x2F;span&gt;&lt;span&gt;((&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;10.10.1.2&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;4028&lt;&#x2F;span&gt;&lt;span&gt;))
+&lt;&#x2F;span&gt;&lt;span&gt;s.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;send&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b48ead;&quot;&gt;b&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;{&amp;quot;command&amp;quot;:&amp;quot;pools&amp;quot;}&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;\n&lt;&#x2F;span&gt;&lt;span&gt;&amp;#39;)
+&lt;&#x2F;span&gt;&lt;span&gt;data = s.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;recv&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d08770;&quot;&gt;2048&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;s.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;close&lt;&#x2F;span&gt;&lt;span&gt;()
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#96b5b4;&quot;&gt;print&lt;&#x2F;span&gt;&lt;span&gt;(data.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;decode&lt;&#x2F;span&gt;&lt;span&gt;(&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;ascii&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;))
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Get &lt;a href=&quot;https:&#x2F;&#x2F;braiins-os.com?utm_source=airoweb&quot;&gt;Braiins OS+&lt;&#x2F;a&gt; to increase your mining devices efficiency!&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+</content>
+	</entry>
+</feed>
