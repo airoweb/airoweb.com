@@ -11,6 +11,12 @@ With the installed Braiins OS+, all devices get a uniq identifier ID called Hard
 
 You can collect Hardware ID and IP in a logs.txt file through the command below in the Toolbox:
 
+For 22.08 and higher:
+```bash
+bos-toolbox command -o -p root ip.csv "cat /tmp/miner_hwid | tr '\n' ' ' && cat /etc/network.conf | grep ipaddress"
+```
+
+For 22.05 and lower:
 ```bash
 bos-toolbox command -o -p root ip.csv "cat /tmp/miner_hwid && uci show network.lan.ipaddr" > logs.txt
 ```
