@@ -159,6 +159,10 @@
 		<content type="html">&lt;p&gt;With the installed Braiins OS+, all devices get a uniq identifier ID called Hardware ID, in some case you need to find out the Hardware ID and the related IP. &lt;&#x2F;p&gt;
 &lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;
 &lt;p&gt;You can collect Hardware ID and IP in a logs.txt file through the command below in the Toolbox:&lt;&#x2F;p&gt;
+&lt;p&gt;For 22.08 and higher:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#383838;color:#e6e1dc;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span&gt;bos-toolbox command&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#fd971f;&quot;&gt; -o -p&lt;&#x2F;span&gt;&lt;span&gt; root ip.csv &lt;&#x2F;span&gt;&lt;span style=&quot;color:#c1be91;&quot;&gt;&amp;quot;cat &#x2F;tmp&#x2F;miner_hwid | tr &amp;#39;\n&amp;#39; &amp;#39; &amp;#39; &amp;amp;&amp;amp; cat &#x2F;etc&#x2F;network.conf | grep ipaddress&amp;quot;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;For 22.05 and lower:&lt;&#x2F;p&gt;
 &lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#383838;color:#e6e1dc;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span&gt;bos-toolbox command&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#fd971f;&quot;&gt; -o -p&lt;&#x2F;span&gt;&lt;span&gt; root ip.csv &lt;&#x2F;span&gt;&lt;span style=&quot;color:#c1be91;&quot;&gt;&amp;quot;cat &#x2F;tmp&#x2F;miner_hwid &amp;amp;&amp;amp; uci show network.lan.ipaddr&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#cc7833;&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;span&gt; logs.txt
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 </content>
