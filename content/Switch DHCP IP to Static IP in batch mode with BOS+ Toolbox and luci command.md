@@ -4,7 +4,6 @@ date = 2022-06-23
 
 [taxonomies] 
 categories = ["Braiins OS+"]
-tags = ["luci", "BOS+ Toolbox"]
 +++
 
 In some case we need to chamge DHCP IP to Static IP in our network, the idea is we get the currenct miners IP and set it to the device as a static IP in Braiins OS+.

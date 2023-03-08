@@ -4,7 +4,6 @@ date = 2021-03-18
 
 [taxonomies] 
 categories = ["Mining", "Braiins OS+"]
-tags = ["bosminer", "cron"]
 +++
 
 In some countries there is electricity grid program and the electricity cost is different during a day, so if you want to power up your mining devices with low and hight PSU power limit in day/night you can follow the steps below.
@@ -20,11 +19,11 @@ In some countries there is electricity grid program and the electricity cost is 
 0 21 * * * /etc/init.d/bosminer stop && sed -i 's/psu_power_limit = 900/psu_power_limit = 1250/' /etc/bosminer.toml && /etc/init.d/bosminer start
 ```
 
-4. If the scheduled task field was empty before this, SSH again to the device run the command below:
+1. If the scheduled task field was empty before this, SSH again to the device run the command below:
 /etc/init.d/cron restart
 
-5. Set device time zone to your proper time zone 
+1. Set device time zone to your proper time zone 
 
-6. Happy mining!
+2. Happy mining!
 
 > Get [Braiins OS+](https://braiins-os.com?utm_source=airoweb) to increase your mining devices efficiency!

@@ -4,7 +4,6 @@ date = 2021-08-14
 
 [taxonomies] 
 categories = ["Braiins OS+"]
-tags = ["bosminer", "ssh", "logs"]
 +++
 
 In some case the Quick Action > Get help doesn't work, so you can collect logs by the command below.

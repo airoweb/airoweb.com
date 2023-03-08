@@ -106,7 +106,7 @@
 </span></code></pre>
 <pre data-lang="bash" style="background-color:#383838;color:#e6e1dc;" class="language-bash "><code class="language-bash" data-lang="bash"><span>0 21 </span><span style="color:#cc7833;">* * *</span><span> /etc/init.d/bosminer stop </span><span style="color:#cc7833;">&amp;&amp; </span><span>sed</span><span style="font-style:italic;color:#fd971f;"> -i </span><span style="color:#a5c261;">&#39;s/psu_power_limit = 900/psu_power_limit = 1250/&#39;</span><span> /etc/bosminer.toml </span><span style="color:#cc7833;">&amp;&amp; </span><span>/etc/init.d/bosminer start
 </span></code></pre>
-<ol start="4">
+<ol>
 <li>
 <p>If the scheduled task field was empty before this, SSH again to the device run the command below:
 /etc/init.d/cron restart</p>

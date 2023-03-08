@@ -4,7 +4,6 @@ date = 2019-10-12
 
 [taxonomies] 
 categories = ["Mining"]
-tags = ["cgminer"]
 +++
 
 Use this bash script to auto reload cgminer when hash rate is lower than 10TH/s:

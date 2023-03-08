@@ -4,7 +4,6 @@ date = 2021-07-18
 
 [taxonomies] 
 categories = ["Braiins OS+"]
-tags = ["bosminer", "api", "python"]
 +++
 
 

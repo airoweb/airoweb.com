@@ -1,11 +1,9 @@
-
 +++
 title = "Check pool status and restart BOSminer with Toolbox"
 date = 2021-08-20
 
 [taxonomies] 
 categories = ["Braiins OS+"]
-tags = ["BOS+ Toolbox", "Automation"]
 +++
 
 The pool URLs in the Braiins OS+ and mostly all firmwares are failover for each other and if the first pool deads, the second one will work.
