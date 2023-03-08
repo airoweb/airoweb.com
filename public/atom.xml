@@ -5,8 +5,54 @@
 	<link href="https://airoweb.com/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://airoweb.com"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2022-06-23T00:00:00+00:00</updated>
+	<updated>2023-03-09T00:00:00+00:00</updated>
 	<id>https://airoweb.com/atom.xml</id>
+	<entry xml:lang="en">
+		<title>How to change Power Target&#x2F;Limit based on day&#x2F;night automatically on Braiins OS+?</title>
+		<published>2023-03-09T00:00:00+00:00</published>
+		<updated>2023-03-09T00:00:00+00:00</updated>
+		<link href="https://airoweb.com/how-to-set-psu-power-limit-automatically-and-timebased/" type="text/html"/>
+		<id>https://airoweb.com/how-to-set-psu-power-limit-automatically-and-timebased/</id>
+		<content type="html">&lt;p&gt;In some countries there is electricity grid program and the electricity cost is different during a day, so if you want to power up your mining devices with low and hight PSU power limit in day&#x2F;night you can follow the steps below.&lt;&#x2F;p&gt;
+&lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Note: This option is not available for Beaglebone and Amlogic control boards.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Login to the Braiins OS+ web interface and navigate to System &amp;gt; Schedule Tasks&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Copy and paste the following command to the text area and save it.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;For Braiins OS+ 22.08 and higher:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#383838;color:#e6e1dc;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span&gt;0 9 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#cc7833;&quot;&gt;* * *&lt;&#x2F;span&gt;&lt;span&gt; &#x2F;etc&#x2F;init.d&#x2F;bosminer stop &lt;&#x2F;span&gt;&lt;span style=&quot;color:#cc7833;&quot;&gt;&amp;amp;&amp;amp; &lt;&#x2F;span&gt;&lt;span&gt;sed&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#fd971f;&quot;&gt; -i &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a5c261;&quot;&gt;&amp;#39;s&#x2F;^power_target = .*&#x2F;power_target = 960&#x2F;&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt; &#x2F;etc&#x2F;bosminer.toml &lt;&#x2F;span&gt;&lt;span style=&quot;color:#cc7833;&quot;&gt;&amp;amp;&amp;amp; &lt;&#x2F;span&gt;&lt;span&gt;&#x2F;etc&#x2F;init.d&#x2F;bosminer start
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#383838;color:#e6e1dc;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span&gt;0 9 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#cc7833;&quot;&gt;* * *&lt;&#x2F;span&gt;&lt;span&gt; &#x2F;etc&#x2F;init.d&#x2F;bosminer stop &lt;&#x2F;span&gt;&lt;span style=&quot;color:#cc7833;&quot;&gt;&amp;amp;&amp;amp; &lt;&#x2F;span&gt;&lt;span&gt;sed&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#fd971f;&quot;&gt; -i &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a5c261;&quot;&gt;&amp;#39;s&#x2F;^power_target = .*&#x2F;power_target = 1280&#x2F;&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt; &#x2F;etc&#x2F;bosminer.toml &lt;&#x2F;span&gt;&lt;span style=&quot;color:#cc7833;&quot;&gt;&amp;amp;&amp;amp; &lt;&#x2F;span&gt;&lt;span&gt;&#x2F;etc&#x2F;init.d&#x2F;bosminer start
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;For Braiins OS+ 22.05 and lower:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#383838;color:#e6e1dc;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span&gt;0 9 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#cc7833;&quot;&gt;* * *&lt;&#x2F;span&gt;&lt;span&gt; &#x2F;etc&#x2F;init.d&#x2F;bosminer stop &lt;&#x2F;span&gt;&lt;span style=&quot;color:#cc7833;&quot;&gt;&amp;amp;&amp;amp; &lt;&#x2F;span&gt;&lt;span&gt;sed&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#fd971f;&quot;&gt; -i &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a5c261;&quot;&gt;&amp;#39;s&#x2F;psu_power_limit = 1250&#x2F;psu_power_limit = 960&#x2F;&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt; &#x2F;etc&#x2F;bosminer.toml &lt;&#x2F;span&gt;&lt;span style=&quot;color:#cc7833;&quot;&gt;&amp;amp;&amp;amp; &lt;&#x2F;span&gt;&lt;span&gt;&#x2F;etc&#x2F;init.d&#x2F;bosminer start
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#383838;color:#e6e1dc;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span&gt;0 21 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#cc7833;&quot;&gt;* * *&lt;&#x2F;span&gt;&lt;span&gt; &#x2F;etc&#x2F;init.d&#x2F;bosminer stop &lt;&#x2F;span&gt;&lt;span style=&quot;color:#cc7833;&quot;&gt;&amp;amp;&amp;amp; &lt;&#x2F;span&gt;&lt;span&gt;sed&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#fd971f;&quot;&gt; -i &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a5c261;&quot;&gt;&amp;#39;s&#x2F;psu_power_limit = 900&#x2F;psu_power_limit = 1280&#x2F;&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt; &#x2F;etc&#x2F;bosminer.toml &lt;&#x2F;span&gt;&lt;span style=&quot;color:#cc7833;&quot;&gt;&amp;amp;&amp;amp; &lt;&#x2F;span&gt;&lt;span&gt;&#x2F;etc&#x2F;init.d&#x2F;bosminer start
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;ol start=&quot;3&quot;&gt;
+&lt;li&gt;
+&lt;p&gt;If the scheduled task field was empty before this, SSH again to the device run the command below:
+&#x2F;etc&#x2F;init.d&#x2F;cron restart&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Set device time zone to your proper time zone &lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Happy mining!&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Get &lt;a href=&quot;https:&#x2F;&#x2F;braiins-os.com?utm_source=airoweb&quot;&gt;Braiins OS+&lt;&#x2F;a&gt; to increase your mining devices efficiency!&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Switch DHCP to Static IP in batch with BOS+ Toolbox and luci command</title>
 		<published>2022-06-23T00:00:00+00:00</published>
@@ -132,43 +178,6 @@
 &lt;&#x2F;span&gt;&lt;span&gt;s.close()
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#da4939;&quot;&gt;print&lt;&#x2F;span&gt;&lt;span&gt;(data.decode(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#c1be91;&quot;&gt;&amp;quot;ascii&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt;))
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Get &lt;a href=&quot;https:&#x2F;&#x2F;braiins-os.com?utm_source=airoweb&quot;&gt;Braiins OS+&lt;&#x2F;a&gt; to increase your mining devices efficiency!&lt;&#x2F;p&gt;
-&lt;&#x2F;blockquote&gt;
-</content>
-	</entry>
-	<entry xml:lang="en">
-		<title>How to change PSU power limit based on day&#x2F;night automatically?</title>
-		<published>2021-03-18T00:00:00+00:00</published>
-		<updated>2021-03-18T00:00:00+00:00</updated>
-		<link href="https://airoweb.com/how-to-set-psu-power-limit-automatically-and-timebased/" type="text/html"/>
-		<id>https://airoweb.com/how-to-set-psu-power-limit-automatically-and-timebased/</id>
-		<content type="html">&lt;p&gt;In some countries there is electricity grid program and the electricity cost is different during a day, so if you want to power up your mining devices with low and hight PSU power limit in day&#x2F;night you can follow the steps below.&lt;&#x2F;p&gt;
-&lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;Login to the Braiins OS+ web interface and navigate to System &amp;gt; Schedule Tasks&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;Copy and paste the following command to the text area and save it.&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;&#x2F;ol&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#383838;color:#e6e1dc;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span&gt;0 9 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#cc7833;&quot;&gt;* * *&lt;&#x2F;span&gt;&lt;span&gt; &#x2F;etc&#x2F;init.d&#x2F;bosminer stop &lt;&#x2F;span&gt;&lt;span style=&quot;color:#cc7833;&quot;&gt;&amp;amp;&amp;amp; &lt;&#x2F;span&gt;&lt;span&gt;sed&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#fd971f;&quot;&gt; -i &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a5c261;&quot;&gt;&amp;#39;s&#x2F;psu_power_limit = 1250&#x2F;psu_power_limit = 900&#x2F;&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt; &#x2F;etc&#x2F;bosminer.toml &lt;&#x2F;span&gt;&lt;span style=&quot;color:#cc7833;&quot;&gt;&amp;amp;&amp;amp; &lt;&#x2F;span&gt;&lt;span&gt;&#x2F;etc&#x2F;init.d&#x2F;bosminer start
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#383838;color:#e6e1dc;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span&gt;0 21 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#cc7833;&quot;&gt;* * *&lt;&#x2F;span&gt;&lt;span&gt; &#x2F;etc&#x2F;init.d&#x2F;bosminer stop &lt;&#x2F;span&gt;&lt;span style=&quot;color:#cc7833;&quot;&gt;&amp;amp;&amp;amp; &lt;&#x2F;span&gt;&lt;span&gt;sed&lt;&#x2F;span&gt;&lt;span style=&quot;font-style:italic;color:#fd971f;&quot;&gt; -i &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a5c261;&quot;&gt;&amp;#39;s&#x2F;psu_power_limit = 900&#x2F;psu_power_limit = 1250&#x2F;&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt; &#x2F;etc&#x2F;bosminer.toml &lt;&#x2F;span&gt;&lt;span style=&quot;color:#cc7833;&quot;&gt;&amp;amp;&amp;amp; &lt;&#x2F;span&gt;&lt;span&gt;&#x2F;etc&#x2F;init.d&#x2F;bosminer start
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;If the scheduled task field was empty before this, SSH again to the device run the command below:
-&#x2F;etc&#x2F;init.d&#x2F;cron restart&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;Set device time zone to your proper time zone &lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;
-&lt;p&gt;Happy mining!&lt;&#x2F;p&gt;
-&lt;&#x2F;li&gt;
-&lt;&#x2F;ol&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Get &lt;a href=&quot;https:&#x2F;&#x2F;braiins-os.com?utm_source=airoweb&quot;&gt;Braiins OS+&lt;&#x2F;a&gt; to increase your mining devices efficiency!&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;

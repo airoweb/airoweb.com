@@ -75,7 +75,7 @@
         <div class="content container">
             
 <div class="post">
-  <h1 class="post-title">How to change PSU power limit based on day&#x2F;night automatically?</h1>
+  <h1 class="post-title">How to change Power Target&#x2F;Limit based on day&#x2F;night automatically on Braiins OS+?</h1>
   <span class="post-date">
     <svg style="margin-bottom:-3px" class="i-clock" viewBox="0 0 32 32"
          width="16" height="16" fill="none" stroke="currentcolor"
@@ -83,17 +83,20 @@
         <circle cx="16" cy="16" r="14"/>
         <path d="M16 8 L16 16 20 20"/>
     </svg>
-    <span>1 minute read</span>
+    <span>2 minute read</span>
     <svg style="margin-bottom: -3px" class="i-edit" viewBox="0 0 32 32"
          width="16" height="16" fill="none" stroke="currentcolor"
          stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
         <path d="M30 7 L25 2 5 22 3 29 10 27 Z M21 6 L26 11 Z M5 22 L10 27 Z"/>
     </svg>
 
-    Published: 2021-03-18
+    Published: 2023-03-09
 </span>
   <p>In some countries there is electricity grid program and the electricity cost is different during a day, so if you want to power up your mining devices with low and hight PSU power limit in day/night you can follow the steps below.</p>
 <span id="continue-reading"></span>
+<blockquote>
+<p>Note: This option is not available for Beaglebone and Amlogic control boards.</p>
+</blockquote>
 <ol>
 <li>
 <p>Login to the Braiins OS+ web interface and navigate to System &gt; Schedule Tasks</p>
@@ -102,11 +105,17 @@
 <p>Copy and paste the following command to the text area and save it.</p>
 </li>
 </ol>
-<pre data-lang="bash" style="background-color:#383838;color:#e6e1dc;" class="language-bash "><code class="language-bash" data-lang="bash"><span>0 9 </span><span style="color:#cc7833;">* * *</span><span> /etc/init.d/bosminer stop </span><span style="color:#cc7833;">&amp;&amp; </span><span>sed</span><span style="font-style:italic;color:#fd971f;"> -i </span><span style="color:#a5c261;">&#39;s/psu_power_limit = 1250/psu_power_limit = 900/&#39;</span><span> /etc/bosminer.toml </span><span style="color:#cc7833;">&amp;&amp; </span><span>/etc/init.d/bosminer start
+<p>For Braiins OS+ 22.08 and higher:</p>
+<pre data-lang="bash" style="background-color:#383838;color:#e6e1dc;" class="language-bash "><code class="language-bash" data-lang="bash"><span>0 9 </span><span style="color:#cc7833;">* * *</span><span> /etc/init.d/bosminer stop </span><span style="color:#cc7833;">&amp;&amp; </span><span>sed</span><span style="font-style:italic;color:#fd971f;"> -i </span><span style="color:#a5c261;">&#39;s/^power_target = .*/power_target = 960/&#39;</span><span> /etc/bosminer.toml </span><span style="color:#cc7833;">&amp;&amp; </span><span>/etc/init.d/bosminer start
 </span></code></pre>
-<pre data-lang="bash" style="background-color:#383838;color:#e6e1dc;" class="language-bash "><code class="language-bash" data-lang="bash"><span>0 21 </span><span style="color:#cc7833;">* * *</span><span> /etc/init.d/bosminer stop </span><span style="color:#cc7833;">&amp;&amp; </span><span>sed</span><span style="font-style:italic;color:#fd971f;"> -i </span><span style="color:#a5c261;">&#39;s/psu_power_limit = 900/psu_power_limit = 1250/&#39;</span><span> /etc/bosminer.toml </span><span style="color:#cc7833;">&amp;&amp; </span><span>/etc/init.d/bosminer start
+<pre data-lang="bash" style="background-color:#383838;color:#e6e1dc;" class="language-bash "><code class="language-bash" data-lang="bash"><span>0 9 </span><span style="color:#cc7833;">* * *</span><span> /etc/init.d/bosminer stop </span><span style="color:#cc7833;">&amp;&amp; </span><span>sed</span><span style="font-style:italic;color:#fd971f;"> -i </span><span style="color:#a5c261;">&#39;s/^power_target = .*/power_target = 1280/&#39;</span><span> /etc/bosminer.toml </span><span style="color:#cc7833;">&amp;&amp; </span><span>/etc/init.d/bosminer start
 </span></code></pre>
-<ol>
+<p>For Braiins OS+ 22.05 and lower:</p>
+<pre data-lang="bash" style="background-color:#383838;color:#e6e1dc;" class="language-bash "><code class="language-bash" data-lang="bash"><span>0 9 </span><span style="color:#cc7833;">* * *</span><span> /etc/init.d/bosminer stop </span><span style="color:#cc7833;">&amp;&amp; </span><span>sed</span><span style="font-style:italic;color:#fd971f;"> -i </span><span style="color:#a5c261;">&#39;s/psu_power_limit = 1250/psu_power_limit = 960/&#39;</span><span> /etc/bosminer.toml </span><span style="color:#cc7833;">&amp;&amp; </span><span>/etc/init.d/bosminer start
+</span></code></pre>
+<pre data-lang="bash" style="background-color:#383838;color:#e6e1dc;" class="language-bash "><code class="language-bash" data-lang="bash"><span>0 21 </span><span style="color:#cc7833;">* * *</span><span> /etc/init.d/bosminer stop </span><span style="color:#cc7833;">&amp;&amp; </span><span>sed</span><span style="font-style:italic;color:#fd971f;"> -i </span><span style="color:#a5c261;">&#39;s/psu_power_limit = 900/psu_power_limit = 1280/&#39;</span><span> /etc/bosminer.toml </span><span style="color:#cc7833;">&amp;&amp; </span><span>/etc/init.d/bosminer start
+</span></code></pre>
+<ol start="3">
 <li>
 <p>If the scheduled task field was empty before this, SSH again to the device run the command below:
 /etc/init.d/cron restart</p>
