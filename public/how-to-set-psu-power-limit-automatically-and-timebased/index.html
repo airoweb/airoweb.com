@@ -97,14 +97,8 @@
 <blockquote>
 <p>Note: This option is not available for Beaglebone and Amlogic control boards.</p>
 </blockquote>
-<ol>
-<li>
 <p>Login to the Braiins OS+ web interface and navigate to System &gt; Schedule Tasks</p>
-</li>
-<li>
 <p>Copy and paste the following command to the text area and save it.</p>
-</li>
-</ol>
 <p>For Braiins OS+ 22.08 and higher:</p>
 <pre data-lang="bash" style="background-color:#383838;color:#e6e1dc;" class="language-bash "><code class="language-bash" data-lang="bash"><span>0 9 </span><span style="color:#cc7833;">* * *</span><span> /etc/init.d/bosminer stop </span><span style="color:#cc7833;">&amp;&amp; </span><span>sed</span><span style="font-style:italic;color:#fd971f;"> -i </span><span style="color:#a5c261;">&#39;s/^power_target = .*/power_target = 960/&#39;</span><span> /etc/bosminer.toml </span><span style="color:#cc7833;">&amp;&amp; </span><span>/etc/init.d/bosminer start
 </span></code></pre>
@@ -115,18 +109,10 @@
 </span></code></pre>
 <pre data-lang="bash" style="background-color:#383838;color:#e6e1dc;" class="language-bash "><code class="language-bash" data-lang="bash"><span>0 21 </span><span style="color:#cc7833;">* * *</span><span> /etc/init.d/bosminer stop </span><span style="color:#cc7833;">&amp;&amp; </span><span>sed</span><span style="font-style:italic;color:#fd971f;"> -i </span><span style="color:#a5c261;">&#39;s/psu_power_limit = 900/psu_power_limit = 1280/&#39;</span><span> /etc/bosminer.toml </span><span style="color:#cc7833;">&amp;&amp; </span><span>/etc/init.d/bosminer start
 </span></code></pre>
-<ol start="3">
-<li>
 <p>If the scheduled task field was empty before this, SSH again to the device run the command below:
 /etc/init.d/cron restart</p>
-</li>
-<li>
 <p>Set device time zone to your proper time zone </p>
-</li>
-<li>
 <p>Happy mining!</p>
-</li>
-</ol>
 <blockquote>
 <p>Get <a href="https://braiins-os.com?utm_source=airoweb">Braiins OS+</a> to increase your mining devices efficiency!</p>
 </blockquote>

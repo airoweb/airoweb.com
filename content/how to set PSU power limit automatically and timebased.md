@@ -11,9 +11,9 @@ In some countries there is electricity grid program and the electricity cost is 
 
 > Note: This option is not available for Beaglebone and Amlogic control boards.
 
-1. Login to the Braiins OS+ web interface and navigate to System > Schedule Tasks
+Login to the Braiins OS+ web interface and navigate to System > Schedule Tasks
 
-2. Copy and paste the following command to the text area and save it.
+Copy and paste the following command to the text area and save it.
 
 For Braiins OS+ 22.08 and higher:
 ```bash
@@ -34,12 +34,12 @@ For Braiins OS+ 22.05 and lower:
 ```
 
 
-3. If the scheduled task field was empty before this, SSH again to the device run the command below:
+If the scheduled task field was empty before this, SSH again to the device run the command below:
 /etc/init.d/cron restart
 
-4. Set device time zone to your proper time zone 
+Set device time zone to your proper time zone 
 
-2. Happy mining!
+Happy mining!
 
 
 > Get [Braiins OS+](https://braiins-os.com?utm_source=airoweb) to increase your mining devices efficiency!
