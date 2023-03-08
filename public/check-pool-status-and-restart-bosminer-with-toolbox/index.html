@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <!-- viewport-fit=cover is to support iPhone X rounded corners and notch in landscape-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
+
+      <title>Airoweb</title>
+
+      <!-- CSS -->
+      <link rel="stylesheet" href="https://airoweb.com/print.css" media="print">
+      <link rel="stylesheet" href="https://airoweb.com/poole.css">
+      <link rel="stylesheet" href="https://airoweb.com/hyde.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+      
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="https://airoweb.com/atom.xml">
+      
+
+      
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-5384911-16"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+
+          gtag('config', 'UA-5384911-16');
+        </script>
+
+      
+    </head>
+
+    <body class=" ">
+        
+            <div class="sidebar">
+                <div class="container sidebar-sticky">
+                    <div class="sidebar-about">
+                        
+                        <div class="img_profile_wrapper">
+                          <div class="circle"></div>
+                         <img src="Be.gif" />
+                        </div>
+                            <a href="https:&#x2F;&#x2F;airoweb.com"><h1>Airoweb</h1></a>
+                            
+                            <p class="lead">☕ 💻 🛟 🎾 🔁</p>
+                            
+                        
+                    </div>
+
+                    <ul class="sidebar-nav">
+                        
+                        
+                        <li class="sidebar-nav-item"><a href="https:&#x2F;&#x2F;github.com&#x2F;3ehzad">GitHub</a></li>
+                        
+                        <li class="sidebar-nav-item"><a href="https:&#x2F;&#x2F;t.me&#x2F;@airoweb">Telegram</a></li>
+                        
+                        <li class="sidebar-nav-item"><a href="https:&#x2F;&#x2F;twitter.com&#x2F;@airoweb">Twitter</a></li>
+                        
+                        <li class="sidebar-nav-item"><a href="https:&#x2F;&#x2F;tippin.me&#x2F;@airoweb">Buy me a coffee!</a></li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div class="content container">
+            
+<div class="post">
+  <h1 class="post-title">Check pool status and restart BOSminer with Toolbox</h1>
+  <span class="post-date">
+    <svg style="margin-bottom:-3px" class="i-clock" viewBox="0 0 32 32"
+         width="16" height="16" fill="none" stroke="currentcolor"
+         stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+        <circle cx="16" cy="16" r="14"/>
+        <path d="M16 8 L16 16 20 20"/>
+    </svg>
+    <span>2 minute read</span>
+    <svg style="margin-bottom: -3px" class="i-edit" viewBox="0 0 32 32"
+         width="16" height="16" fill="none" stroke="currentcolor"
+         stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+        <path d="M30 7 L25 2 5 22 3 29 10 27 Z M21 6 L26 11 Z M5 22 L10 27 Z"/>
+    </svg>
+
+    Published: 2021-08-20
+</span>
+  <p>The pool URLs in the Braiins OS+ and mostly all firmwares are failover for each other and if the first pool deads, the second one will work.</p>
+<span id="continue-reading"></span>
+<p>In some cases the farm has one URL and you need to check the machines for their Status and reload them.</p>
+<p>Run the command to download the latest BOS+ Toolbox:</p>
+<pre style="background-color:#383838;color:#e6e1dc;"><code><span>cd / &amp;&amp; wget http://feeds.braiins-os.com/toolbox/latest/bos-toolbox &amp;&amp; chmod+x ./bos-toolbox
+</span></code></pre>
+<p>Save the code below in a file &quot;checkpool.sh&quot; and save it in the beside of Toolbox.</p>
+<pre data-lang="bash" style="background-color:#383838;color:#e6e1dc;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="font-style:italic;color:#7c7865;">#!/bin/bash
+</span><span>
+</span><span style="color:#d0d0ff;">DIR</span><span style="color:#cc7833;">=</span><span style="color:#a5c261;">$( </span><span style="color:#da4939;">cd </span><span style="color:#c1be91;">&quot;$( dirname &quot;${</span><span style="color:#d0d0ff;">BASH_SOURCE[</span><span style="color:#a5c261;">0</span><span style="color:#d0d0ff;">]</span><span style="color:#c1be91;">}&quot; )&quot; </span><span style="color:#cc7833;">&amp;&amp; </span><span style="color:#da4939;">pwd </span><span style="color:#a5c261;">)
+</span><span style="color:#d0d0ff;">PASSWORD</span><span style="color:#cc7833;">=</span><span style="color:#a5c261;">root
+</span><span>
+</span><span style="color:#cc7833;">if </span><span style="color:#da4939;">[[ </span><span>$</span><span style="color:#d0d0ff;">1 </span><span style="color:#cc7833;">== </span><span style="color:#c1be91;">&quot;check&quot; </span><span style="color:#da4939;">]] </span><span style="color:#cc7833;">|| </span><span style="color:#da4939;">[[ </span><span>$</span><span style="color:#d0d0ff;">1 </span><span style="color:#cc7833;">== </span><span style="color:#c1be91;">&quot;check_reload&quot; </span><span style="color:#da4939;">]]
+</span><span style="color:#cc7833;">then
+</span><span>  </span><span style="color:#cc7833;">for</span><span> i </span><span style="color:#cc7833;">in </span><span>{2..255}
+</span><span>  </span><span style="color:#cc7833;">do
+</span><span>    </span><span style="color:#d0d0ff;">ip</span><span style="color:#cc7833;">=</span><span style="color:#c1be91;">&quot;192.168.1.$</span><span style="color:#d0d0ff;">i</span><span style="color:#c1be91;">&quot;
+</span><span>    fping</span><span style="font-style:italic;color:#fd971f;"> -c1 -t100 </span><span>$</span><span style="color:#d0d0ff;">ip </span><span style="color:#a5c261;">2</span><span style="color:#cc7833;">&gt;</span><span>/dev/null </span><span style="color:#a5c261;">1</span><span style="color:#cc7833;">&gt;</span><span>/dev/null
+</span><span>    </span><span style="color:#cc7833;">if </span><span style="color:#da4939;">[ </span><span style="color:#c1be91;">&quot;$</span><span style="color:#d0d0ff;">?</span><span style="color:#c1be91;">&quot; </span><span style="color:#cc7833;">=</span><span> 0 </span><span style="color:#da4939;">]
+</span><span>    </span><span style="color:#cc7833;">then
+</span><span>      </span><span style="color:#cc7833;">if ! </span><span style="color:#da4939;">echo </span><span style="color:#a5c261;">&#39;{&quot;command&quot;:&quot;version&quot;}&#39; </span><span style="color:#cc7833;">| </span><span>nc $</span><span style="color:#d0d0ff;">ip</span><span> 4028 </span><span style="color:#cc7833;">|</span><span>jq .</span><span style="color:#c1be91;">&quot;VERSION&quot;</span><span style="color:#cc7833;">[]</span><span>.</span><span style="color:#c1be91;">&quot;BOSminer&quot;  </span><span style="color:#cc7833;">| </span><span>grep</span><span style="font-style:italic;color:#fd971f;"> -q</span><span> bosminer
+</span><span>      </span><span style="color:#cc7833;">then
+</span><span>        </span><span style="color:#da4939;">echo </span><span style="color:#c1be91;">&quot;$</span><span style="color:#d0d0ff;">ip</span><span style="color:#c1be91;"> no bosminer found&quot;
+</span><span>      </span><span style="color:#cc7833;">else
+</span><span>        </span><span style="color:#d0d0ff;">pool_status</span><span style="color:#cc7833;">=</span><span style="color:#a5c261;">$(</span><span style="color:#da4939;">echo </span><span style="color:#a5c261;">&#39;{&quot;command&quot;:&quot;pools&quot;}&#39; </span><span style="color:#cc7833;">| </span><span style="color:#a5c261;">nc $</span><span style="color:#d0d0ff;">ip</span><span style="color:#a5c261;"> 4028 </span><span style="color:#cc7833;">| </span><span style="color:#a5c261;">jq .</span><span style="color:#c1be91;">&quot;POOLS&quot;</span><span style="color:#cc7833;">[]</span><span style="color:#a5c261;">.</span><span style="color:#c1be91;">&quot;Status&quot;</span><span style="color:#a5c261;">)
+</span><span>        </span><span style="color:#cc7833;">if </span><span style="color:#da4939;">[[ </span><span>$</span><span style="color:#d0d0ff;">pool_status </span><span style="color:#cc7833;">== </span><span style="color:#a5c261;">&#39;Dead&#39; </span><span style="color:#da4939;">]]
+</span><span>        </span><span style="color:#cc7833;">then
+</span><span>          </span><span style="color:#da4939;">echo </span><span style="color:#c1be91;">&quot;$</span><span style="color:#d0d0ff;">ip</span><span style="color:#c1be91;"> : pool is $</span><span style="color:#d0d0ff;">pool_status</span><span style="color:#c1be91;">, Restart miner&quot;
+</span><span>          </span><span style="color:#cc7833;">if </span><span style="color:#da4939;">[[ </span><span>$</span><span style="color:#d0d0ff;">1 </span><span style="color:#cc7833;">== </span><span style="color:#c1be91;">&quot;check_reload&quot; </span><span style="color:#da4939;">]]
+</span><span>          </span><span style="color:#cc7833;">then
+</span><span>            </span><span style="color:#c1be91;">&quot;$</span><span style="color:#d0d0ff;">DIR</span><span style="color:#c1be91;">&quot;</span><span>/bos-toolbox command $</span><span style="color:#d0d0ff;">ip</span><span style="font-style:italic;color:#fd971f;"> -p </span><span>$</span><span style="color:#d0d0ff;">PASSWORD </span><span style="color:#c1be91;">&quot;/etc/bosminer.toml &amp;&amp; /etc/init.d/bosminer restart&quot;
+</span><span>          </span><span style="color:#cc7833;">fi
+</span><span>        </span><span style="color:#cc7833;">else
+</span><span>          </span><span style="color:#da4939;">echo </span><span style="color:#c1be91;">&quot;$</span><span style="color:#d0d0ff;">ip</span><span style="color:#c1be91;"> : pool status is $</span><span style="color:#d0d0ff;">pool_status</span><span style="color:#c1be91;">&quot;
+</span><span>        </span><span style="color:#cc7833;">fi
+</span><span>      </span><span style="color:#cc7833;">fi
+</span><span>    </span><span style="color:#cc7833;">else
+</span><span>      </span><span style="color:#da4939;">echo </span><span style="color:#c1be91;">&quot;$</span><span style="color:#d0d0ff;">ip</span><span style="color:#c1be91;"> OFFLINE&quot;
+</span><span>    </span><span style="color:#cc7833;">fi
+</span><span>  </span><span style="color:#cc7833;">done
+</span><span style="color:#cc7833;">else
+</span><span>  </span><span style="color:#da4939;">echo </span><span style="color:#c1be91;">&quot;Ivalid Input, Use: check or check_reload&quot;
+</span><span style="color:#cc7833;">fi
+</span></code></pre>
+<p>Give it the excutive permission:</p>
+<pre style="background-color:#383838;color:#e6e1dc;"><code><span>chmod+x ./checkpool.sh
+</span></code></pre>
+<p>To set the cronjob on the linux machine open the terminal and type:</p>
+<pre style="background-color:#383838;color:#e6e1dc;"><code><span>vi /etc/crontab
+</span></code></pre>
+<p>Copy nd paste the code below:</p>
+<pre style="background-color:#383838;color:#e6e1dc;"><code><span>*/30 * * * * /checkpool
+</span></code></pre>
+<p>Please let me know if you find any issue. <a href="https://t.me/airoweb">@airoweb</a></p>
+<blockquote>
+<p>Get <a href="https://braiins-os.com?utm_source=airoweb">Braiins OS+</a> to increase your mining devices efficiency!</p>
+</blockquote>
+
+</div>
+
+        </div>
+
+    </body>
+
+</html>

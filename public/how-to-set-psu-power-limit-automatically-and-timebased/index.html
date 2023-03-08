@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <!-- viewport-fit=cover is to support iPhone X rounded corners and notch in landscape-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
+
+      <title>Airoweb</title>
+
+      <!-- CSS -->
+      <link rel="stylesheet" href="https://airoweb.com/print.css" media="print">
+      <link rel="stylesheet" href="https://airoweb.com/poole.css">
+      <link rel="stylesheet" href="https://airoweb.com/hyde.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+      
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="https://airoweb.com/atom.xml">
+      
+
+      
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-5384911-16"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+
+          gtag('config', 'UA-5384911-16');
+        </script>
+
+      
+    </head>
+
+    <body class=" ">
+        
+            <div class="sidebar">
+                <div class="container sidebar-sticky">
+                    <div class="sidebar-about">
+                        
+                        <div class="img_profile_wrapper">
+                          <div class="circle"></div>
+                         <img src="Be.gif" />
+                        </div>
+                            <a href="https:&#x2F;&#x2F;airoweb.com"><h1>Airoweb</h1></a>
+                            
+                            <p class="lead">☕ 💻 🛟 🎾 🔁</p>
+                            
+                        
+                    </div>
+
+                    <ul class="sidebar-nav">
+                        
+                        
+                        <li class="sidebar-nav-item"><a href="https:&#x2F;&#x2F;github.com&#x2F;3ehzad">GitHub</a></li>
+                        
+                        <li class="sidebar-nav-item"><a href="https:&#x2F;&#x2F;t.me&#x2F;@airoweb">Telegram</a></li>
+                        
+                        <li class="sidebar-nav-item"><a href="https:&#x2F;&#x2F;twitter.com&#x2F;@airoweb">Twitter</a></li>
+                        
+                        <li class="sidebar-nav-item"><a href="https:&#x2F;&#x2F;tippin.me&#x2F;@airoweb">Buy me a coffee!</a></li>
+                        
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div class="content container">
+            
+<div class="post">
+  <h1 class="post-title">How to change PSU power limit based on day&#x2F;night automatically?</h1>
+  <span class="post-date">
+    <svg style="margin-bottom:-3px" class="i-clock" viewBox="0 0 32 32"
+         width="16" height="16" fill="none" stroke="currentcolor"
+         stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+        <circle cx="16" cy="16" r="14"/>
+        <path d="M16 8 L16 16 20 20"/>
+    </svg>
+    <span>1 minute read</span>
+    <svg style="margin-bottom: -3px" class="i-edit" viewBox="0 0 32 32"
+         width="16" height="16" fill="none" stroke="currentcolor"
+         stroke-linecap="round" stroke-linejoin="round" stroke-width="6.25%">
+        <path d="M30 7 L25 2 5 22 3 29 10 27 Z M21 6 L26 11 Z M5 22 L10 27 Z"/>
+    </svg>
+
+    Published: 2021-03-18
+</span>
+  <p>In some countries there is electricity grid program and the electricity cost is different during a day, so if you want to power up your mining devices with low and hight PSU power limit in day/night you can follow the steps below.</p>
+<span id="continue-reading"></span>
+<ol>
+<li>
+<p>Login to the Braiins OS+ web interface and navigate to System &gt; Schedule Tasks</p>
+</li>
+<li>
+<p>Copy and paste the following command to the text area and save it.</p>
+</li>
+</ol>
+<pre data-lang="bash" style="background-color:#383838;color:#e6e1dc;" class="language-bash "><code class="language-bash" data-lang="bash"><span>0 9 </span><span style="color:#cc7833;">* * *</span><span> /etc/init.d/bosminer stop </span><span style="color:#cc7833;">&amp;&amp; </span><span>sed</span><span style="font-style:italic;color:#fd971f;"> -i </span><span style="color:#a5c261;">&#39;s/psu_power_limit = 1250/psu_power_limit = 900/&#39;</span><span> /etc/bosminer.toml </span><span style="color:#cc7833;">&amp;&amp; </span><span>/etc/init.d/bosminer start
+</span></code></pre>
+<pre data-lang="bash" style="background-color:#383838;color:#e6e1dc;" class="language-bash "><code class="language-bash" data-lang="bash"><span>0 21 </span><span style="color:#cc7833;">* * *</span><span> /etc/init.d/bosminer stop </span><span style="color:#cc7833;">&amp;&amp; </span><span>sed</span><span style="font-style:italic;color:#fd971f;"> -i </span><span style="color:#a5c261;">&#39;s/psu_power_limit = 900/psu_power_limit = 1250/&#39;</span><span> /etc/bosminer.toml </span><span style="color:#cc7833;">&amp;&amp; </span><span>/etc/init.d/bosminer start
+</span></code></pre>
+<ol start="4">
+<li>
+<p>If the scheduled task field was empty before this, SSH again to the device run the command below:
+/etc/init.d/cron restart</p>
+</li>
+<li>
+<p>Set device time zone to your proper time zone </p>
+</li>
+<li>
+<p>Happy mining!</p>
+</li>
+</ol>
+<blockquote>
+<p>Get <a href="https://braiins-os.com?utm_source=airoweb">Braiins OS+</a> to increase your mining devices efficiency!</p>
+</blockquote>
+
+</div>
+
+        </div>
+
+    </body>
+
+</html>
