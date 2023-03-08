@@ -1,6 +1,6 @@
 +++
 title = "Print out the miner hardware ID and IP in Braiins OS+"
-date = 2023-08-01
+date = 2022-12-02
 
 [taxonomies] 
 categories = ["Braiins OS+"]
