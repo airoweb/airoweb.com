@@ -1,6 +1,6 @@
 +++
 title = "Switch DHCP to Static IP in batch with BOS+ Toolbox and luci command"
-date = 2021-06-23
+date = 2022-06-23
 
 [taxonomies] 
 categories = ["Braiins OS+"]

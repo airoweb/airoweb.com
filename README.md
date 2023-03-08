@@ -1,2 +1,0 @@
-# airoweb.com
-Personal Techlogs

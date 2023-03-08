@@ -1,4 +1,4 @@
 +++
-sort_by = "date"
+sort_by = "updatedate"
 paginate_by = 5
 +++

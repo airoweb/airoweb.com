@@ -1,4 +1,3 @@
-
 +++
 title = "Print out the miner hardware ID and IP in Braiins OS+"
 date = 2021-08-01
