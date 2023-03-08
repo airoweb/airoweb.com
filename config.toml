@@ -27,8 +27,8 @@ hyde_reverse = false
 hyde_theme = ""
 hyde_links = [
     {url = "https://github.com/airoweb", name = "GitHub"},
-    {url = "https://t.me/@airoweb", name = "Telegram"},
-     {url = "https://twitter.com/@airoweb", name = "Twitter"},
+    {url = "https://t.me/airoweb", name = "Telegram"},
+     {url = "https://twitter.com/airoweb", name = "Twitter"},
      {url = "https://tippin.me/@airoweb", name = "Buy me a coffee!"},
      
 ]
