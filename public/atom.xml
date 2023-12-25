@@ -5,8 +5,21 @@
 	<link href="https://airoweb.com/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://airoweb.com"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2023-03-09T00:00:00+00:00</updated>
+	<updated>2023-12-26T00:00:00+00:00</updated>
 	<id>https://airoweb.com/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Configuring Braiins OS+ Firmware: Harnessing the Power of Braiins Toolbox 23.12</title>
+		<published>2023-12-26T00:00:00+00:00</published>
+		<updated>2023-12-26T00:00:00+00:00</updated>
+		<link href="https://airoweb.com/how-to-configure-braiins-os-during-the-installation-process/" type="text/html"/>
+		<id>https://airoweb.com/how-to-configure-braiins-os-during-the-installation-process/</id>
+		<content type="html">&lt;p&gt;Unlocking new possibilities with the recent release of Braiins Toolbox 23.12, users can now seamlessly configure their ASIC miners during the Braiins OS+ installation process. This revolutionary feature eliminates the need for additional steps, allowing both large-scale mining farms and their tech enthusiasts to streamline daily operations and save valuable time.&lt;&#x2F;p&gt;
+&lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;
+&lt;p&gt;Another notable enhancement empowers farm operators to set workernames effortlessly by utilizing the miner&#x27;s MAC address, IP, and Hostname in the pool settings via Braiins Toolbox, doable on GUI or CLI mode.&lt;&#x2F;p&gt;
+&lt;p&gt;For a detailed overview of the latest changes in version 23.12, check out the &lt;a href=&quot;https:&#x2F;&#x2F;feeds.braiins-os.com&#x2F;braiins-toolbox&#x2F;#5a4c12bc-0000-4d0b-a167-e07acee5e131?utm_source=airoweb&quot;&gt;changelog&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Ready to optimize your mining experience? Download the &lt;a href=&quot;https:&#x2F;&#x2F;braiins.com&#x2F;toolbox#download?utm_source=airoweb&quot;&gt;Braiins Toolbox&lt;&#x2F;a&gt; now and seamlessly install Braiins OS+ on your S19 Antminers!&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>How to change Power Target&#x2F;Limit based on day&#x2F;night automatically on Braiins OS+?</title>
 		<published>2023-03-09T00:00:00+00:00</published>
