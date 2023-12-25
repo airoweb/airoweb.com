@@ -6,8 +6,15 @@ date = 2023-12-26
 categories = ["Braiins Toolbox", "Braiins OS+", "ASIC Miners", "Mining Firmware"]
 +++
 
-Unlocking new possibilities with the recent release of Braiins Toolbox 23.12, users can now seamlessly configure their ASIC miners during the Braiins OS+ installation process. This revolutionary feature eliminates the need for additional steps, allowing both large-scale mining farms and their tech enthusiasts to streamline daily operations and save valuable time.
+Unlocking new possibilities with the recent release of Braiins Toolbox 23.12, users can now seamlessly configure their ASIC miners during the Braiins OS+ installation process. This revolutionary feature 
 <!-- more -->
+
+eliminates the need for additional steps, allowing both large-scale mining farms and their tech enthusiasts to streamline daily operations and save valuable time.
+
+```bash
+./braiins-toolbox firmware install --url stratum2+tcp://3ehzad.{{miner.mac}}@v2.eu.stratum.braiins.com/u95GEReVMjK6k5YqiSFNqqTnKU4ypU2Wm8awa6tmbmDmk1bWt
+ --url stratum+tcp://3ehzad.{{miner.ip}}@eu.stratum.braiins.com:3333 --power 2000 --dps on --shutdown-enabled true --shutdown-duration 3 --cooling-mode standard -i iplist.txt
+```
 
 Another notable enhancement empowers farm operators to set workernames effortlessly by utilizing the miner's MAC address, IP, and Hostname in the pool settings via Braiins Toolbox, doable on GUI or CLI mode.
 
